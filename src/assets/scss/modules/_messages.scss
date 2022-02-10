@@ -5,10 +5,24 @@
     margin-bottom: .4rem;
   }
   &__text {
-    background-color: aqua;
     padding: 1rem;
   }
   &__text--monitor {
-    background-color: beige;
+    background-color: #FBFBF2;
+    padding: 1rem;
+  }
+  &__tosend {
+    width: 100%;
+    position: fixed;
+    bottom: .7rem;
+    right: 0;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+  }
+  &__input {
+    padding: 2rem;
+    width: 70%;
+    height: 100%;
   }
 }

@@ -6,4 +6,4 @@ const Legals = () => {
   )
 }
 
-export default Legals
+export default Legals;
