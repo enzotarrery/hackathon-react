@@ -13,6 +13,9 @@
 /* 3 - modules */
 @use 'modules/hidden';
 @use 'modules/button';
+@use 'modules/navigationTchat';
+@use 'modules/messages';
+@use 'modules/tchatscreen.scss';
 @use 'modules/search';
 @use 'modules/instructors';
 @use 'modules/instructor';
@@ -20,3 +23,4 @@
 
 /* 4 - pages exceptions */
 @use 'pages/index';
+@use 'modules/header';

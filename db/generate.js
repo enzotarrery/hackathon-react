@@ -1,5 +1,18 @@
 const fs = require('fs')
+const { sensitiveHeaders } = require('http2')
 const casual = require('casual').fr_FR
+const LoremIpsum = require('lorem-ipsum').LoremIpsum
+
+const lorem = new LoremIpsum({
+  sentencesPerParagraph: {
+    max: 8,
+    min: 4,
+  },
+  wordsPerSentence: {
+    max: 16,
+    min: 4,
+  },
+})
 
 // La liste des lieux et de leurs positions
 const places = [
@@ -78,6 +91,7 @@ const settings = {
   sessionsLength: 100,
   maxFavoritePlaces: 5,
   maxFavoriteInstructors: 3,
+  tchatLength: 10,
 }
 
 // On définit le générateur pour un utilisateur
@@ -106,14 +120,14 @@ casual.define('user', (id, role) => {
               b: '/img/ope.jpg',
               c: '/img/truck.jpg',
             }),
-        },
+          },
     isAvailable:
       role === 'student'
         ? null
         : casual.random_value({
-          a: true,
-          b: false,
-        }),
+            a: true,
+            b: false,
+          }),
     role: role || 'student',
   }
 })
@@ -132,8 +146,27 @@ casual.define('session', (id) => {
     instructorUserId: casual.integer(0, settings.instructorsLength - 1),
     studentUserId: casual.random_element([
       casual.integer(0, settings.usersLength - 1),
-      null,
+      'none',
     ]),
+  }
+})
+
+// Liste du tchat
+casual.define('tchats', (id, instructorId, userId) => {
+  const chooseSender = ['user', 'monitor']
+  const littleTchat = Array(20)
+    .fill(null)
+    .map((item) => {
+      return {
+        sender: chooseSender[casual.integer(0, 1)],
+        messages: lorem.generateSentences(5),
+      }
+    })
+  return {
+    id,
+    userId,
+    instructorId,
+    conversations: [...littleTchat],
   }
 })
 
@@ -152,6 +185,11 @@ const sessions = Array(settings.sessionsLength)
   .fill(null)
   .map((n, id) => casual.session(id))
 
+// On génère les conversations
+const tchats = Array(settings.tchatLength)
+  .fill(null)
+  .map((n, id) => casual.tchats(id, instructors[id].id, users[id].id))
+
 // On agrège toutes ces données
 const data = {
   users: [...instructors, ...users],
@@ -161,6 +199,7 @@ const data = {
     id: idx,
     ...p,
   })),
+  tchats,
 }
 
 // On écrit le fichier de base de données
