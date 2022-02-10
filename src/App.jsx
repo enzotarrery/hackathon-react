@@ -12,6 +12,10 @@ import { AuthReducer } from './reducer';
 // States
 import { initialState } from './states/states';
 
+import PrivacyPolicy from './views/PrivacyPolicy';
+import Legals from './views/Legals';
+import Instructors from './components/Instructors';
+
 const AuthContext = createContext()
 
 const App = () => {
@@ -99,6 +103,9 @@ const App = () => {
                 <Route index={true} element={<Home />}/>
                 <Route path='/login' element={ <Login /> } />
                 <Route path='/logout' element={<Logout /> } />
+                <Route path='/instructors' element={<Instructors />} />
+                <Route path='/legals' element={<Legals />} />
+                <Route path='/privacy' element={<PrivacyPolicy />} />
               </Routes>
           </Layout>
       </BrowserRouter>
