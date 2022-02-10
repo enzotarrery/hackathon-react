@@ -1,5 +1,5 @@
 /* General rules */
-
+@use '../variables/colors';
 *,
 *:after,
 *:before {
@@ -13,6 +13,7 @@ html {
 body {
   font-size: 1.4rem; /* 14px by default */
   font-family: 'Noto sans', sans-serif;
+  background-color: colors.$white;
 }
 
 /* WARNING: links are black by default, don't forget to reuse this syntax to override this default style */

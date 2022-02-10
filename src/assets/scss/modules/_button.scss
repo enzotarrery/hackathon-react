@@ -1,3 +1,4 @@
+@use '../variables/colors';
 .button {
     /* general style */
     display: inline-block;
@@ -12,13 +13,16 @@
     line-height: 1.42857143;
     border-radius: 4px;
 
-    &--primary {}
+    &--primary {
+        background-color: colors.$red;
+        color: colors.$white;
+    }
 
     &--secondary {}
 
     &--tchat {
         margin-left: .3rem;
-        background-color: #B13C3C;
-        color: white;
+        background-color: colors.$red;
+        color: colors.$white;
     }
 }
