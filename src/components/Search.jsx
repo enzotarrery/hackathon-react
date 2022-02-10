@@ -10,7 +10,7 @@ const Search = (props) => {
 
     /* Functions */
     const getData = () => {
-        fetch('http://localhost:8080/api/' + props.type)
+        fetch('/api/' + props.type)
             .then((response) => response.json())
             .then((response) => setData(response))
             .catch((error) => console.warn(`ERROR (${error.code}) : ${error.message}.`));
@@ -34,6 +34,7 @@ const Search = (props) => {
         getData();
     }, []);
 
+    /* Render */
     return (
         <section className='search'>
             <input
@@ -63,4 +64,4 @@ const Search = (props) => {
     );
 }
 
-export default Search
+export default Search;

@@ -1,0 +1,5 @@
+@use '../variables/colors';
+.header {
+  height: 5rem;
+  background-color: colors.$white;
+}
