@@ -1,5 +1,101 @@
 .profile {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background-color: #fbfbf2;
+
+  &--dark {
+    background-color: #32292f;
+    color: #fbfbf2;
+  }
+
+  &__title {
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    padding: 50px 0;
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    margin: auto;
+  }
+
+  &__header {
+    flex: 0 0 30%;
+    align-self: flex-start;
+  }
+
+  &__profil-picture {
+    height: 250px;
+    width: 250px;
+    border-radius: 70px;
+  }
+
+  .button {
+    display: block;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 0 0 50%;
+  }
+
+  &__submit {
+    width: 100px;
+    margin: auto;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 18px;
+    line-height: 1.42857143;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  &__label {
+    text-align: left;
+  }
+
+  &__input {
+    margin: 2.5rem 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    height: 4rem;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #fafcfd;
+    border: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+
+    &:focus {
+      box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
+      outline: 0;
+      background-color: #b13c3c;
+      color: #000;
+    }
+  }
+
+  &__input--select {
+    min-height: 10rem;
+    &:focus {
+      background-color: #fff;
+    }
+    &:not(:disabled) option {
+      padding: 2px;
+      margin: 5px 0;
+
+      &:checked {
+        border-radius: 5px;
+        color: black;
+      }
+    }
+  }
 }
