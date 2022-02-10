@@ -75,20 +75,9 @@ const App = () => {
       })
       .then((data) => {
         if (data.email) {
-<<<<<<< HEAD
           dispatch({type: 'login_success', payload : {
             user : data
           }})
-=======
-          dispatch({
-            type: "login_success",
-            payload: {
-              user: {
-                username: data.email,
-              },
-            },
-          });
->>>>>>> dev
         }
       });
   };
@@ -105,19 +94,6 @@ const App = () => {
   return (
     <AuthContext.Provider value={[state, actions]}>
       <BrowserRouter>
-<<<<<<< HEAD
-          <Layout>
-              <Routes>
-                <Route index={true} element={<Home />}/>
-                <Route path='/login' element={ <Login /> } />
-                <Route path='/logout' element={<Logout /> } />
-                <Route path='/instructors' element={<Instructors />} />
-                <Route path='/legals' element={<Legals />} />
-                <Route path='/privacy' element={<PrivacyPolicy />} />
-                <Route path='/register' element={<Register />} />
-              </Routes>
-          </Layout>
-=======
         <Layout>
           <Routes>
             <Route index={ true } element={ <Home /> } />
@@ -152,7 +128,6 @@ const App = () => {
             
           </Routes>
         </Layout>
->>>>>>> dev
       </BrowserRouter>
     </AuthContext.Provider>
   );
