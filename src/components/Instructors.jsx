@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react/cjs/react.development';
 import Instructor from './Instructor';
+import Search from './Search';
 
 const Instructors = () => {
 
@@ -38,7 +39,7 @@ const Instructors = () => {
                     Disponibles
                 </li>
             </ul>
-            <input type="text" className='searchbar' />
+            <Search type='places' />
             <ul className='instructors__list'>
                 {
                     tag === 'all' && instructors.map((instructor) =>
