@@ -66,3 +66,26 @@
     text-decoration: underline;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .login {
+    &__card {
+      width: 40%;
+    }
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .login {
+    &__container {
+      // height: 100%; //! to uncomment after global style pull
+      min-height: 100vh; //! to del after global style pull
+  
+      @include mixins.flexarize(column, center, center, nowrap);
+    }
+
+    &__card {
+      width: 70%;
+    }
+  }
+}
