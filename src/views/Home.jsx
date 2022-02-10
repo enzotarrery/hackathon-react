@@ -1,4 +1,5 @@
 import React from "react";
+import MonteurImg from "../assets/images/karl-platforme-moniteur.png";
 
 const Home = () => {
   return (
@@ -35,9 +36,18 @@ const Home = () => {
       </div>
       <div className="home--card">
         <h3 className="home--card__title">Carl Benz</h3>
-        <div className="home--card__body"></div>
-        <p className="home--card__localisation">QUARTIER : Minimes</p>
-        <p className="home--card__presentation">Hello, moi c’est Carl </p>
+        <span className="separate"></span>
+        <div className="home--card__body">
+          <img src={MonteurImg} alt="karl platforme moniteur" />
+        </div>
+        <div className="home--card__localisation">
+          <i class="fa-solid fa-location-dot"></i>
+          <span className="home--card__text">QUARTIER : Minimes</span>
+        </div>
+        <div className="home--card__presentation">
+          <i class="fa-solid fa-user"></i>
+          <span className="home--card__text">Hello, moi c’est Carl</span>
+        </div>
       </div>
     </div>
   );

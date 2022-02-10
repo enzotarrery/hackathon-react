@@ -29,3 +29,9 @@ img {
   height: auto;
   vertical-align: middle;
 }
+.separate {
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: colors.$black;
+}

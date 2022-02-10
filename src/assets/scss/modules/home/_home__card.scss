@@ -1,0 +1,38 @@
+@use '../../variables/colors';
+
+.home--card {
+  border: 3px solid colors.$black;
+  border-radius: 4rem;
+  box-shadow: 10px 8px 0px 0px colors.$black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1.8rem;
+  }
+  &__body {
+    margin: 2.5rem 0;
+  }
+  &__localisation {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    width: 100%;
+    margin-left: 14.2rem;
+
+  }
+  &__presentation {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    width: 100%;
+    margin-left: 14rem;
+  }
+  &__text {
+    margin-left: 1.2rem;
+  }
+
+}
