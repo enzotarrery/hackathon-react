@@ -15,6 +15,7 @@ import { initialState } from './states/states';
 import PrivacyPolicy from './views/PrivacyPolicy';
 import Legals from './views/Legals';
 import Instructors from './components/Instructors';
+import Register from './views/Register';
 
 const AuthContext = createContext()
 
@@ -78,9 +79,7 @@ const App = () => {
       .then(data => {
         if (data.email) {
           dispatch({type: 'login_success', payload : {
-            user : {
-              username : data.email
-            }
+            user : data
           }})
         }
     })
@@ -106,6 +105,7 @@ const App = () => {
                 <Route path='/instructors' element={<Instructors />} />
                 <Route path='/legals' element={<Legals />} />
                 <Route path='/privacy' element={<PrivacyPolicy />} />
+                <Route path='/register' element={<Register />} />
               </Routes>
           </Layout>
       </BrowserRouter>
