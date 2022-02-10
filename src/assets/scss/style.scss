@@ -12,6 +12,10 @@
 
 /* 3 - modules */
 @use 'modules/button';
+@use 'modules/navigationTchat';
+@use 'modules/messages';
+@use 'modules/tchatscreen.scss';
 
 /* 4 - pages exceptions */
 @use 'pages/index';
+@use 'pages/tchat';

@@ -1,0 +1,14 @@
+.messages {
+  padding: 1rem;
+  &__sender {
+    display: block;
+    margin-bottom: .4rem;
+  }
+  &__text {
+    background-color: aqua;
+    padding: 1rem;
+  }
+  &__text--monitor {
+    background-color: beige;
+  }
+}
