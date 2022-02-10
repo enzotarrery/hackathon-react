@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React, useRef, useState} from 'react';
 
 const RegisterForm = ({onSubmit}) => {
 
@@ -8,6 +8,10 @@ const RegisterForm = ({onSubmit}) => {
     email: '',
     password: '',
     role: '',
+    // favoritePlacesId: [],
+    // favoriteInstructorsId: [],
+    car : '',
+    isAvailable: true,
   })
 
   const handleFormChange = e => {
@@ -15,6 +19,14 @@ const RegisterForm = ({onSubmit}) => {
         ...formState,
         [e.target.name]: e.target.value
     })
+  }
+
+  const handleFileChange = (evt) => {
+    setFormState({
+      ...formState,
+      car : evt.target.files
+    })
+    console.log(evt.target.files);
   }
 
   const handleSubmit = (evt) => {
@@ -41,6 +53,13 @@ const RegisterForm = ({onSubmit}) => {
       <label htmlFor="instructor">Moniteur</label>
       <input type="radio" name="role" id="instructor" value="instructor" onChange={handleFormChange} required/>
 
+      {
+        formState.role === 'instructor' && <div>
+          <label htmlFor="car"></label>
+          <input type="file" name="car" id="car" onChange={handleFileChange}/>
+        </div>
+      }
+      
       <input type="submit" value="S'enregistrer"/>
     </form>
   );
