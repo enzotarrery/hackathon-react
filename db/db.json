@@ -2,11 +2,14 @@
   "users": [
     {
       "id": 0,
-      "firstName": "Brian",
+      "firstName": "Bria",
       "lastName": "Bruneau",
       "email": "noemiebenoit@hotmail.com",
       "password": "2Charlotte90",
-      "favoritePlacesId": [],
+      "favoritePlacesId": [
+        2,
+        6
+      ],
       "favoriteInstructorsId": [],
       "instructorInfos": {
         "car": "/img/ope.jpg"
