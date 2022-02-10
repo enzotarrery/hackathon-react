@@ -132,7 +132,7 @@ casual.define('session', (id) => {
     instructorUserId: casual.integer(0, settings.instructorsLength - 1),
     studentUserId: casual.random_element([
       casual.integer(0, settings.usersLength - 1),
-      null,
+      'none',
     ]),
   }
 })

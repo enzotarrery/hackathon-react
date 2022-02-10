@@ -7,7 +7,7 @@ const Course = (props) => {
                 Cours { props.data.id }
             </td>
             <td className='table__cell'>
-                { props.data.dateStart }
+                { new Date(props.data.dateStart).toLocaleString('fr') }
             </td>
         </tr>
     );

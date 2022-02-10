@@ -12,6 +12,7 @@ import CourseForm from './views/CourseForm';
 import PrivacyPolicy from './views/PrivacyPolicy';
 import Legals from './views/Legals';
 import Courses from './components/Courses';
+import Reservation from './views/Reservation';
 
 const App = () => {
   return (
@@ -22,7 +23,10 @@ const App = () => {
           
               {/* Instructor */}
               <Route path='/instructors' element={ <Instructors /> } />
-              <Route path='/instructor/:id/courses' element={ <Courses /> } />
+              <Route path='/instructor/:id'>
+                <Route path='courses' element={ <Courses /> }/>
+                <Route path='courses/booking' element={ <Reservation /> }/>
+              </Route>
           
               {/* Course */}
               <Route path='/courses'>

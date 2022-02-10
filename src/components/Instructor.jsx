@@ -10,7 +10,7 @@ const Instructor = (props) => {
                 <figcaption className='instructor__info'>
                     <header className='instructor__header'>
                         <h2 className='title intructor__name'>{ `${ props.data.firstName } ${ props.data.lastName }` }</h2>
-                        <h3 className='subtitle instructor__neighbourhood'>Mireuil</h3>
+                        <h3 className='subtitle instructor__neighbourhood'>Quartier</h3>
                     </header>
                     <section className='instructor__content'></section>
                 </figcaption>
