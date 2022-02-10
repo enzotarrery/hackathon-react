@@ -1,3 +1,6 @@
+@use '../variables/colors';
+@use '../variables/fonts';
+
 /* General rules */
 
 *,
@@ -12,7 +15,13 @@ html {
 
 body {
   font-size: 1.4rem; /* 14px by default */
-  font-family: 'Noto sans', sans-serif;
+  font-family: fonts.$font-main;
+  background-color: colors.$white;
+}
+
+main {
+  padding: 2rem;
+  min-height: 90vh;
 }
 
 /* WARNING: links are black by default, don't forget to reuse this syntax to override this default style */

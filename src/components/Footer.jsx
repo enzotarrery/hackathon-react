@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className='footer'>
           <Link to='/legals'>Mentions légales</Link>
           <Link to='/privacy'>Politique de Confidentialité</Link>
         </footer>

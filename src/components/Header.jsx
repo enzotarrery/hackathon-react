@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <header>
+        <header className='header'>
             <Link to="/help" className='button'>Aide</Link>
             <Link to="/logout" className='button button--primary'>Inscription</Link>
             <Link to="/login" className='button'>Connexion</Link>

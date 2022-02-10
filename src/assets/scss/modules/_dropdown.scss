@@ -1,0 +1,31 @@
+@use '../variables/colors';
+@use '../variables/mixins';
+
+.dropdown {
+    @include mixins.flexarize(column);
+    width: 100%;
+    background-color: colors.$white;
+    border: {
+        top: 2.5px solid colors.$black;
+        left: 2.5px solid colors.$black;
+        right: 5px solid colors.$black;
+        bottom: 5px solid colors.$black;
+    }
+    border-top: none;
+    border-radius: 10px;
+
+    &--hidden {
+        opacity: 0;
+    }
+
+    &__item {
+        padding: 1.5rem;
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+
+        &:not(:last-of-type) {
+            border-bottom: 1px solid colors.$black;
+        }
+    }
+}

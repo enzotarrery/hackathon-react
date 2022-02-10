@@ -38,10 +38,13 @@ const Instructors = () => {
                     Disponibles
                 </li>
             </ul>
-            <Search type='places' />
+            <Search
+                type='places'
+            />
             <ul className='instructors__list'>
                 {
-                    tag === 'all' && instructors.map((instructor) =>
+                    tag === 'all' && instructors
+                        .map((instructor) =>
                         <Instructor
                             key={ instructor.id }
                             data={ instructor }

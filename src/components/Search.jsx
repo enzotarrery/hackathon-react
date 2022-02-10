@@ -28,6 +28,10 @@ const Search = (props) => {
         setVisible(false);
     }
 
+    const handleClick = (event) => {
+        setSearch(event.target.textContent);
+    }
+
     /* Hooks */
     useEffect(() => {
         /* We get the data needed for the search */
@@ -45,7 +49,7 @@ const Search = (props) => {
                 onFocus={ handleFocus }
                 onBlur={ handleBlur }
             />
-            <ul className={ `dropdown search__list ${ !visible ? 'hidden' : '' }` }>
+            <ul className={ `dropdown search__list ${ !visible ? 'dropdown--hidden' : '' }` }>
                 {
                     data
                         .filter((item) => item.name
@@ -54,6 +58,8 @@ const Search = (props) => {
                         )
                         .map((item) => <li
                             key={ item.id }
+                            className='dropdown__item'
+                            onClick={ handleClick }
                         >
                             { item.name }
                         </li>

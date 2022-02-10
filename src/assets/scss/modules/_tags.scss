@@ -1,0 +1,6 @@
+@use '../variables/mixins';
+
+.tags {
+    @include mixins.flexarize(row, flex-start, center);
+    gap: 1rem;
+}

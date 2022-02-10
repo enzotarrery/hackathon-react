@@ -4,15 +4,15 @@ import Footer from '../components/Footer'
 
 const Layout = props => {
 
-    return <div className="">
-        <Header />
-        <main>
-            <section className="">
+    return (
+        <div className="">
+            <Header />
+            <main>
                 { props.children }
-            </section>
-        </main>
-        <Footer />
-    </div>
+            </main>
+            <Footer />
+        </div>
+    );
 }
 
 export default Layout;
