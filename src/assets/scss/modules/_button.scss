@@ -1,7 +1,15 @@
+@use '../variables/colors';
+
 .button {
     /* general style */
 
     &--primary {}
 
     &--secondary {}
+
+    &--tchat {
+        margin-left: .3rem;
+        background-color: colors.$red;
+        color: white;
+    }
 }
