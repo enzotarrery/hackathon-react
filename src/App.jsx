@@ -6,6 +6,8 @@ import {
 } from "react-router-dom";
 import Layout from './components/Layout'
 import Home from './views/Home'
+import PrivacyPolicy from './views/PrivacyPolicy';
+import Legals from './views/Legals';
 
 const App = () => {
   return (
@@ -13,8 +15,8 @@ const App = () => {
         <Layout>
             <Routes>
               <Route index={true} element={<Home />} />
-              <Route path="/login" element={ <Login /> } />
-              <Route path="/logout" element={ <Logout /> } />
+              <Route path='/legals' element={<Legals />} />
+              <Route path='/privacy' element={<PrivacyPolicy />} />
             </Routes>
         </Layout>
     </BrowserRouter>
