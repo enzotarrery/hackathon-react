@@ -7,7 +7,7 @@ const Header = () => {
       <Link to="/help" className="button">
         Aide
       </Link>
-      <Link to="/logout" className="button button--primary">
+      <Link to="/register" className="button button--primary">
         Inscription
       </Link>
       <Link to="/login" className="button">

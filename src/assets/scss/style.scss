@@ -20,7 +20,9 @@
 @use 'modules/instructors';
 @use 'modules/instructor';
 @use 'modules/header';
+@use 'modules/loginForm';
 
 /* 4 - pages exceptions */
 @use 'pages/index';
 @use 'pages/tchat';
+@use 'pages/login';
