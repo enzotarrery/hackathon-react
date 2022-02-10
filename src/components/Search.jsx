@@ -34,6 +34,7 @@ const Search = (props) => {
         getData();
     }, []);
 
+    /* Render */
     return (
         <section className='search'>
             <input
@@ -63,4 +64,4 @@ const Search = (props) => {
     );
 }
 
-export default Search
+export default Search;

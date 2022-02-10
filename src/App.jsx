@@ -5,10 +5,11 @@ import {
   Route
 } from "react-router-dom";
 import Layout from './components/Layout'
+import Instructors from './components/Instructors';
 import Home from './views/Home'
+import InstructorDetails from './views/InstructorDetails';
 import PrivacyPolicy from './views/PrivacyPolicy';
 import Legals from './views/Legals';
-import Instructors from './components/Instructors';
 
 const App = () => {
   return (
@@ -16,7 +17,10 @@ const App = () => {
         <Layout>
             <Routes>
               <Route index={true} element={<Home />} />
-              <Route path='/instructors' element={<Instructors />} />
+              <Route path='/instructors' element={ <Instructors /> } />
+              <Route path='/instructor'>
+                <Route path=':id' element={ <InstructorDetails /> }/>
+              </Route>
               <Route path='/legals' element={<Legals />} />
               <Route path='/privacy' element={<PrivacyPolicy />} />
             </Routes>

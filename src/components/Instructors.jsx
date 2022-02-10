@@ -18,7 +18,6 @@ const Instructors = () => {
     }
 
     const handleClick = (event) => {
-        console.log(event.target);
         setTag(event.target.id);
     }
 
@@ -45,7 +44,7 @@ const Instructors = () => {
                     tag === 'all' && instructors.map((instructor) =>
                         <Instructor
                             key={ instructor.id }
-                            instructor={ instructor }
+                            data={ instructor }
                         />
                     )
                 }
@@ -55,7 +54,7 @@ const Instructors = () => {
                         .map((instructor) =>
                             <Instructor
                                 key={ instructor.id }
-                                instructor={ instructor }
+                                data={ instructor }
                             />
                     )
                 }
@@ -64,4 +63,4 @@ const Instructors = () => {
     );
 }
 
-export default Instructors
+export default Instructors;

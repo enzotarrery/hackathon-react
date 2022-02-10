@@ -9,7 +9,7 @@ const Instructor = (props) => {
                 <img className='instructor__avatar' src="" alt="Instructor's avatar" />
                 <figcaption className='instructor__info'>
                     <header className='instructor__header'>
-                        <h2 className='title intructor__name'>{ `${ props.instructor.firstName } ${ props.instructor.lastName }` }</h2>
+                        <h2 className='title intructor__name'>{ `${ props.data.firstName } ${ props.data.lastName }` }</h2>
                         <h3 className='subtitle instructor__neighbourhood'>Mireuil</h3>
                     </header>
                     <section className='instructor__content'></section>
