@@ -111,16 +111,23 @@ casual.define("user", (id, role) => {
         : Array(casual.integer(0, settings.maxFavoriteInstructors - 1))
             .fill(null)
             .map(() => casual.integer(0, settings.instructorsLength - 1)),
-    moniteurInfos:
+    instructorInfos:
       role === "student"
         ? {}
         : {
             car: casual.random_value({
-              a: "Renault Scénic",
-              b: "Opel Corsa",
-              c: "Mercedes Classe A",
+              a: "%PUBLIC_URL%/img/ren.jpg",
+              b: "%PUBLIC_URL%/img/ope.jpg",
+              c: "%PUBLIC_URL%/img/truck.jpg",
             }),
           },
+    isAvailable:
+      role === "student"
+        ? null
+        : casual.random_value({
+            a: true,
+            b: false,
+          }),
     role: role || "student",
   };
 });
