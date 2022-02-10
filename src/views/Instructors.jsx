@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react/cjs/react.development';
-import Instructor from './Instructor';
-import Search from './Search';
+import Instructor from '../components/Instructor';
+import Search from '../components/Search';
 
 const Instructors = () => {
 

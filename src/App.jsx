@@ -5,9 +5,8 @@ import {
   Route
 } from "react-router-dom";
 import Layout from './components/Layout'
-import Instructors from './components/Instructors';
+import Instructors from './views/Instructors';
 import Home from './views/Home'
-import InstructorDetails from './views/InstructorDetails';
 import CourseDetails from './views/CourseDetails';
 import CourseForm from './views/CourseForm';
 import PrivacyPolicy from './views/PrivacyPolicy';
@@ -23,7 +22,6 @@ const App = () => {
           
               {/* Instructor */}
               <Route path='/instructors' element={ <Instructors /> } />
-              <Route path='/instructor/:id' element={ <InstructorDetails /> } />
               <Route path='/instructor/:id/courses' element={ <Courses /> } />
           
               {/* Course */}
