@@ -75,20 +75,9 @@ const App = () => {
       })
       .then((data) => {
         if (data.email) {
-<<<<<<< HEAD
           dispatch({type: 'login_success', payload : {
             user : data
           }})
-=======
-          dispatch({
-            type: "login_success",
-            payload: {
-              user: {
-                username: data.email,
-              },
-            },
-          });
->>>>>>> dev
         }
       });
   };
