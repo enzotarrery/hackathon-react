@@ -1040,6 +1040,20 @@
       },
       "isAvailable": true,
       "id": 62
+    },
+    {
+      "firstName": "toto",
+      "lastName": "toto",
+      "email": "toto@toto.to",
+      "password": "tktkktt",
+      "role": "instructor",
+      "favoritePlacesId": [],
+      "favoriteInstructorsId": [],
+      "instructorInfos": {
+        "car": ""
+      },
+      "isAvailable": true,
+      "id": 63
     }
   ],
   "sessions": [

@@ -8,9 +8,11 @@ const RegisterForm = ({onSubmit}) => {
     email: '',
     password: '',
     role: '',
-    // favoritePlacesId: [],
-    // favoriteInstructorsId: [],
-    car : '',
+    favoritePlacesId: [],
+    favoriteInstructorsId: [],
+    instructorInfos : {
+      car : '',
+    },
     isAvailable: true,
   })
 
@@ -56,7 +58,7 @@ const RegisterForm = ({onSubmit}) => {
       {
         formState.role === 'instructor' && <div>
           <label htmlFor="car"></label>
-          <input type="file" name="car" id="car" onChange={handleFileChange}/>
+          <input type="file" name="car" id="car" /*onChange={handleFileChange}*//>
         </div>
       }
       
