@@ -1,4 +1,5 @@
 @use '../variables/colors';
+@use '../variables/mediaqueries' as size;
 
 
 .home {
@@ -50,5 +51,26 @@
     border-radius: 10px;
     height: 3.3rem;
     box-shadow: 5px 7px 0px 0px colors.$black;
+  }
+}
+@media only screen and (min-width: size.$small) {
+  .home {
+    padding: 2rem 4rem;
+    align-items: center;
+
+    &__presentation {
+      padding: 2rem;
+    }
+  }
+}
+@media only screen and (min-width: size.$middle) {
+  .home {
+    flex-direction: row;
+    padding: 2rem;
+    justify-content: center;
+    margin-top: 5rem;
+    &__presentation {
+      flex: 0 0 50%;
+    }
   }
 }
