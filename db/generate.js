@@ -102,9 +102,9 @@ casual.define('user', (id, role) => {
         ? {}
         : {
             car: casual.random_value({
-              a: 'Renault Scénic',
-              b: 'Opel Corsa',
-              c: 'Mercedes Classe A',
+              a: '%PUBLIC_URL%/img/ren.jpg',
+              b: '%PUBLIC_URL%/img/ope.jpg',
+              c: '%PUBLIC_URL%/img/truck.jpg',
             }),
           },
     role: role || 'student',
