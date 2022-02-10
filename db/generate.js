@@ -97,7 +97,7 @@ casual.define('user', (id, role) => {
         : Array(casual.integer(0, settings.maxFavoriteInstructors - 1))
             .fill(null)
             .map(() => casual.integer(0, settings.instructorsLength - 1)),
-    moniteurInfos:
+    instructorInfos:
       role === 'student'
         ? {}
         : {
