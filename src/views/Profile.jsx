@@ -6,7 +6,7 @@ import { AuthContext } from '../App'
 
 const Profile = (props) => {
 
-    //const [state, actions] = useContext(AuthContext)
+    const [state, actions] = useContext(AuthContext)
 
     const getData = () => {
         fetch('http://localhost:8080/api/places')
@@ -22,7 +22,6 @@ const Profile = (props) => {
     const [password, setPassword] = useState(props.loggedUser.password)
     const [favoritePlaces, setFavoritePlaces] = useState(props.loggedUser.favoritePlacesId)
     const [places, setPlaces] = useState([])
-    use
 
     useEffect(() => {
         getData()

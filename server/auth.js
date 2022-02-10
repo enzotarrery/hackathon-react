@@ -18,14 +18,14 @@ const getTokenFromCookie = cookieKey => req => {
 const getCredentialsFromRequest = req => {
     if(req.headers.authorization){
         const b64auth = (req.headers.authorization || '').split(' ')[1] || ''
-        const [username, password] = Buffer.from(b64auth, 'base64').toString().split(':')
+        const [email, password] = Buffer.from(b64auth, 'base64').toString().split(':')
         return {
-            username,
+            email,
             password
         }
-    } else if(req.body.username && req.body.password){
+    } else if(req.body.email && req.body.password){
         return {
-            username: req.body.username,
+            email: req.body.email,
             password: req.body.password
         }
     } else {
@@ -46,14 +46,14 @@ const authMiddleware = settings => Router()
         }
 
         const {
-            username,
+            email,
             password
         } = credentials
     
         fs.promises.readFile(settings.database)
             .then(content => JSON.parse(content))
             .then(data => {
-                const user = data.users.find(user => user.username === username)
+                const user = data.users.find(user => user.email === email)
                 const {
                     password: userPwd,
                     ...userWithoutPwd

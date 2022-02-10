@@ -106,7 +106,14 @@ casual.define('user', (id, role) => {
               b: '/img/ope.jpg',
               c: '/img/truck.jpg',
             }),
-          },
+        },
+    isAvailable:
+      role === 'student'
+        ? null
+        : casual.random_value({
+          a: true,
+          b: false,
+        }),
     role: role || 'student',
   }
 })
