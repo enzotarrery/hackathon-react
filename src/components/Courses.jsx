@@ -1,16 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react/cjs/react.development';
 import Course from './Course';
 
 const Courses = () => {
+
+    /* Variables */
+    const today = new Date();
+
+    /* Routes */
+    const params = useParams();
 
     /* States */
     const [ courses, setCourses ] = useState([]);
 
     /* Functions */
     const getData = () => {
-        fetch('http://localhost:8080/api/courses')
+        fetch('/api/sessions?instructorUserId=' + params.id)
             .then((response) => response.json())
             .then((response) => setCourses(response))
             .catch((error) => console.warn(`ERROR (${error.code}) : ${error.message}.`));
@@ -25,16 +31,18 @@ const Courses = () => {
     /* Render */
     return (
         <section className='events'>
-            <h3 className='title title--secondary'>Evènements à venir</h3>
+            <h3 className='title title--secondary'>Cours à venir</h3>
             <table className='table events__list'>
                 <tbody className='table__content'>
                     {
-                        courses.map((event) =>
-                            <Course
-                                key={ event.id }
-                                data={ event }
-                            />
-                        )
+                        courses
+                            .filter((course) => new Date(course.dateStart) >= today)
+                            .map((course) =>
+                                <Course
+                                    key={ course.id }
+                                    data={ course }
+                                />
+                            )
                     }
                 </tbody>
             </table>

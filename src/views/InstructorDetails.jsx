@@ -12,7 +12,7 @@ const InstructorDetails = () => {
 
   /* Functions */
   const getData = () => {
-    fetch('http://localhost:8080/api/users?id=' + params.id)
+    fetch('/api/users?id=' + params.id)
       .then((response) => response.json())
       .then((response) => setInstructor(response[0]))
       .catch((error) => console.warn(`ERROR (${error.code}) : ${error.message}.`));

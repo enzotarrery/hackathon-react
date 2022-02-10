@@ -7,7 +7,7 @@ const Course = (props) => {
                 Cours { props.data.id }
             </td>
             <td className='table__cell'>
-                { props.course }
+                { props.data.dateStart }
             </td>
         </tr>
     );

@@ -11,7 +11,7 @@ const Instructors = () => {
 
     /* Functions */
     const getData = () => {
-        fetch('http://localhost:8080/api/users?role=instructor')
+        fetch('/api/users?role=instructor')
             .then((response) => response.json())
             .then((response) => setInstructors(response))
             .catch((error) => console.warn(`ERROR (${error.code}) : ${error.message}.`));
