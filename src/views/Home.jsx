@@ -18,15 +18,15 @@ const Home = () => {
           </h3>
           <ul>
             <li>
-              <i class="fa-solid fa-user-secret"></i>
+              <i className="fa-solid fa-user-secret"></i>
               <span className="home__pub">Paiement sécurisé</span>
             </li>
             <li>
-              <i class="fa-solid fa-check"></i>
+              <i className="fa-solid fa-check"></i>
               <span className="home__pub">Super moniteurs</span>
             </li>
             <li>
-              <i class="fa-solid fa-star"></i>
+              <i className="fa-solid fa-star"></i>
               <span className="home__pub home__pub-last-child">
                 Cursus adapté
               </span>
@@ -44,11 +44,11 @@ const Home = () => {
             <img src={MonteurImg} alt="karl platforme moniteur" />
           </div>
           <div className="home--card__localisation">
-            <i class="fa-solid fa-location-dot"></i>
+            <i className="fa-solid fa-location-dot"></i>
             <span className="home--card__text">QUARTIER : Minimes</span>
           </div>
           <div className="home--card__presentation">
-            <i class="fa-solid fa-user"></i>
+            <i className="fa-solid fa-user"></i>
             <span className="home--card__text">Hello, moi c’est Carl</span>
           </div>
         </div>

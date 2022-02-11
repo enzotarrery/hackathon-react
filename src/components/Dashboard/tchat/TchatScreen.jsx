@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Picto from "../../../assets/images/pictos/profile.svg";
 const { v4: uuidv4 } = require("uuid");
 
@@ -28,7 +28,7 @@ const TchatScreen = ({ messagesDisplay }) => {
           })}
       </div>
       <div className="messages__tosend">
-        <input type="messages" class="messages__input" />
+        <input type="messages" className="messages__input" />
         <button className="button button--tchat">Envoyer</button>
       </div>
     </div>

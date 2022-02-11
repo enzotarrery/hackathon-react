@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Picto from "../../../assets/images/pictos/profile.svg";
-import { Link } from "react-router-dom";
 const { v4: uuidv4 } = require("uuid");
 
 const NavTchat = ({ tchats, users, handleReadingFrom }) => {
