@@ -19,6 +19,8 @@
 @use 'modules/search';
 @use 'modules/instructors';
 @use 'modules/instructor';
+@use 'modules/profile';
+@use 'modules/help';
 @use 'modules/header';
 @use 'modules/home/home__card';
 @use 'modules/burger';
@@ -34,4 +36,3 @@
 @use 'pages/register';
 @use 'modules/profile';
 @use 'modules/legals';
-

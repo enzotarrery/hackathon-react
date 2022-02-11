@@ -16,6 +16,7 @@ import { Login, Logout } from "./views/Auth";
 import Tchat from "./views/Tchat";
 import Dashboard from "./views/Dashboard";
 import Profile from "./views/Profile";
+import Help from "./views/Help";
 
 /* Context */
 const AuthContext = createContext();
@@ -126,12 +127,15 @@ const App = () => {
               <Route path=':id' element={<CourseDetails />} />
             </Route>
 
-            {/* Miscellaneous */}
-            <Route path='/legals' element={ <Legals /> } />
-            <Route path='/privacy' element={ <PrivacyPolicy /> } />
+            {/* Help */}
+            <Route path='/help' element={<Help />} />
 
-            {/* Other */ }
-            <Route path='/register' element={ <Register /> } />
+            {/* Miscellaneous */}
+            <Route path='/legals' element={<Legals />} />
+            <Route path='/privacy' element={<PrivacyPolicy />} />
+
+            {/* Other */}
+            <Route path='/register' element={<Register />} />
 
           </Routes>
         </Layout>
