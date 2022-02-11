@@ -1,14 +1,19 @@
 import React from 'react'
-import { useEffect, useState } from 'react/cjs/react.development';
+import { useNavigate } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react/cjs/react.development';
+import { AuthContext } from '../App'
 
 const CourseForm = (props) => {
 
+    /* Context */
+    const [ state, actions ] = useContext(AuthContext);
+
+    /* Routes */
+    const navigate = useNavigate();
+
     /* States */
     const [ courses, setCourses ] = useState([]);
-    const [ formData, setFormData ] = useState({
-        id: null,
-
-    });
+    const [ data, setData ] = useState(null);
 
     /* Functions */
     const getData = () => {
@@ -19,10 +24,10 @@ const CourseForm = (props) => {
     }
 
     const handleChange = (event) => {
-        setFormData({
-            ...formData,
-            [ event.target.name ]: event.target.value,
-        });
+        let course = courses.find((course) => course.id === Number(event.target.value));
+        course.studentUserId = state.user.id;
+        console.log(course);
+        setData(course);
     }
 
     const handleSubmit = (event) => {
@@ -30,11 +35,15 @@ const CourseForm = (props) => {
         event.preventDefault();
 
         /* We post the data */
-        fetch('/api/sessions', {
+        fetch(`http://localhost:8080/api/sessions/${ data.id }`, {
             method: 'PUT',
-            headers: '',
-            body: formData,
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data),
         });
+
+        /* We go to homepage */
+        navigate('/');
+
     }
 
     useEffect(() => {
@@ -44,7 +53,7 @@ const CourseForm = (props) => {
 
     return (
         <form className='form course-form' onSubmit={ handleSubmit }>
-            <select className='select' name="course">
+            <select className='select course-form__select' name="course" onChange={ handleChange }>
                 <option value="">-- Veuillez choisir un cours disponible --</option>
                 {
                     courses.map((course) => <option
@@ -56,7 +65,7 @@ const CourseForm = (props) => {
                     )
                 }
             </select>
-            <input className='button button--primary' type="submit" value="Réserver mon cours" />
+            <input className='button button--outline course-form__button' type="submit" value="Réserver mon cours" />
         </form>
     );
 }

@@ -52,20 +52,26 @@ const Instructors = () => {
                     tag === 'all' && instructors
                         .filter((instructor) =>  district === '' ? true : instructor.district.toLowerCase().includes(district.toLowerCase()))
                         .map((instructor) =>
-                        <Instructor
-                            key={ instructor.id }
-                            data={ instructor }
-                        />
-                    )
+                            <li className='instructors__list-item'>
+                                <Instructor
+                                    key={ instructor.id }
+                                    data={ instructor }
+                                    buttons={ true }
+                                />
+                            </li>
+                        )
                 }
                 {
                     tag === 'availables' && instructors
                         .filter((instructor) => (district === '' ? true : instructor.district.toLowerCase().includes(district.toLowerCase())) && instructor.isAvailable)
                         .map((instructor) =>
-                            <Instructor
-                                key={ instructor.id }
-                                data={ instructor }
-                            />
+                            <li className='instructors__list-item'>
+                                <Instructor
+                                    key={ instructor.id }
+                                    data={ instructor }
+                                    buttons={ true }
+                                />
+                            </li>
                         )
                 }
             </ul>

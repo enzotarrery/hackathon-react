@@ -16,17 +16,15 @@
 @use 'modules/hidden';
 @use 'modules/button';
 @use 'modules/search';
+@use 'modules/select';
 @use 'modules/dropdown';
 @use 'modules/instructor';
+@use 'modules/course-form';
 @use 'modules/tags';
 @use 'modules/tag';
 @use 'modules/navigationTchat';
 @use 'modules/messages';
 @use 'modules/tchatscreen.scss';
-@use 'modules/search';
-@use 'modules/instructors';
-@use 'modules/instructor';
-@use 'modules/header';
 @use 'modules/home/home__card';
 @use 'modules/burger';
 @use 'modules/loginForm';
@@ -34,11 +32,13 @@
 
 /* 4 - pages exceptions */
 @use 'pages/index';
+@use 'pages/instructors';
+@use 'pages/reservation';
 @use 'pages/tchat';
 @use 'pages/home';
 @use 'pages/login';
 @use 'pages/logout';
 @use 'pages/register';
-@use 'modules/profile';
-@use 'modules/legals';
+@use 'pages/profile';
+@use 'pages/legals';
 
