@@ -112,7 +112,7 @@ casual.define("user", (id, role) => {
             .fill(null)
             .map(() => casual.integer(0, settings.instructorsLength - 1)),
     instructorInfos:
-      role === "student"
+      role === " "
         ? {}
         : {
             car: casual.random_value({

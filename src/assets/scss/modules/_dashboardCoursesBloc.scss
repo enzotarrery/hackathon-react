@@ -1,0 +1,69 @@
+@import '../variables/colors';
+
+.dashboard-courses-bloc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+    &__title {
+        margin: 2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    &__card {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        background: $white;
+        border: solid 3px $black;
+        margin: 2rem;
+        padding-top: 2rem;
+        border-radius: 37px;
+        height: 50vh;
+        width: 50vw;
+    }
+
+    &__titles {
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+    
+    &__students {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        span {
+            display: block;
+        }
+    }
+
+    .division {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: $black;
+    }
+
+    &__button {
+        align-self: flex-end;
+        margin-right: 3rem;
+        width: 50%;
+    }
+
+    .progression {
+        display: block;
+        width: 30%;
+        height: .8rem;
+        background: $white;
+        border: solid 1px $black;
+    }
+
+    .color {
+        display: block;
+        width: 20%;
+        height: .8rem;
+        background: $green;
+    }
+}

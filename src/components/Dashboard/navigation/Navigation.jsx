@@ -1,7 +1,7 @@
-import React from "react";
-
 const Navigation = () => {
-  return <div>Navigation DashBoard</div>;
-};
+  return (
+    <div className="button">Navigation DashBoard</div>
+  );
+}
 
 export default Navigation;

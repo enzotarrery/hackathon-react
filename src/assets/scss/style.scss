@@ -14,6 +14,8 @@
 @use 'modules/hidden';
 @use 'modules/button';
 @use 'modules/navigationTchat';
+@use 'modules/navigationDashboard';
+@use 'modules/dashboardCoursesBloc';
 @use 'modules/messages';
 @use 'modules/tchatscreen.scss';
 @use 'modules/search';
