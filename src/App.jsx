@@ -17,6 +17,7 @@ import Tchat from "./views/Tchat";
 import Dashboard from "./views/Dashboard";
 import Profile from "./views/Profile";
 import Help from "./views/Help";
+import Contact from "./views/Contact";
 
 /* Context */
 const AuthContext = createContext();
@@ -136,6 +137,7 @@ const App = () => {
 
             {/* Other */}
             <Route path='/register' element={<Register />} />
+            <Route path='/contact' element={<Contact />} />
 
           </Routes>
         </Layout>
