@@ -7,10 +7,8 @@
       "email": "noemiebenoit@hotmail.com",
       "password": "2Charlotte90",
       "favoritePlacesId": [
-        "2",
-        "3",
-        "4",
-        "6"
+        2,
+        6
       ],
       "favoriteInstructorsId": [],
       "instructorInfos": {
