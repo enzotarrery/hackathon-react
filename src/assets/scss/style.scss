@@ -19,13 +19,16 @@
 @use 'modules/search';
 @use 'modules/instructors';
 @use 'modules/instructor';
-@use 'modules/profile';
 @use 'modules/help';
 @use 'modules/header';
 @use 'modules/home/home__card';
 @use 'modules/burger';
 @use 'modules/loginForm';
 @use 'modules/registerForm';
+@use 'modules/legals';
+
+@use 'modules/footer';
+@use 'modules/profile';
 @use 'modules/legals';
 
 /* 4 - pages exceptions */

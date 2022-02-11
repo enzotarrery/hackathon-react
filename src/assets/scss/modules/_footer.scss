@@ -1,0 +1,87 @@
+@use '../variables/colors';
+@use '../variables/fonts';
+@use '../variables/mixins';
+
+.footer {
+  width: 100vw;
+  height: 40vh;
+  background-color: colors.$black;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+
+  padding: 5% 10%;
+
+  @include mixins.flexarize(column, center, center, nowrap);
+
+  &__content, &__separator, &__legals {
+    width: 100%;
+  }
+
+  &__content {
+    @include mixins.flexarize(row, space-between, flex-start, nowrap);
+  }
+
+  &__legals {
+    @include mixins.flexarize(row-reverse, flex-start, center, nowrap);
+  }
+
+  &__colTitle {
+    color: colors.$white;
+    font-family: fonts.$font-main;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 2vh;
+  }
+
+  &__link, &__link:link, &__link:focus, &__link:visited  {
+    color: colors.$white;
+    font-family: fonts.$font-main;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    padding: 3% 0;
+
+  }
+
+  &__link--inRow {
+    margin-left: 20px;
+  }
+
+  &__logo {
+    width: 10%;
+    height: auto;
+    align-self: center;
+    color: colors.$white;
+  }
+
+  &__separator {
+    height: 1px;
+    width: 100%;
+    background-color: colors.$white;
+    padding: 0.5px;
+    margin: 2% 0;
+
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .footer {
+    height: 100vh;
+    @include mixins.flexarize(column, center, center, nowrap);
+
+    &__content {
+      @include mixins.flexarize(column, space-between, flex-start, nowrap);
+      height: 70%;
+    }
+  
+    &__legals {
+      @include mixins.flexarize(column-reverse, flex-start, center, nowrap);
+    }
+
+    &__logo {
+      width: 60%;
+
+    }
+  
+  }
+}
