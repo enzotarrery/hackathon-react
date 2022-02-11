@@ -68,7 +68,12 @@
 
 @media screen and (min-width: 992px) {
     .instructor {
-        padding: 5vw;
+        padding: 2.5vw;
+        border-radius: 50px;
+
+        &::before {
+            border-radius: 50px;
+        }
 
         &__name {
             font-size: 2vw;

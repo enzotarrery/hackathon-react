@@ -20,6 +20,7 @@ import Help from "./views/Help";
 import CoursesIndex from "./components/Dashboard/blocs/CoursesIndex";
 import Contact from "./views/Contact";
 import NotFound from "./views/NotFound";
+import Table from './components/Table';
 
 /* Context */
 const AuthContext = createContext();
@@ -115,7 +116,8 @@ const App = () => {
               <Route index element={<CoursesIndex />} />
               <Route path="stats" element={<CoursesIndex />} />
               <Route path="tchat" element={<Tchat />} />
-              <Route path="courses" element={<Courses />} />
+              <Route path="courses" element={ <Courses /> } />
+              <Route path="payments" element={ <Table data='payments' /> } />
               <Route path="account" element={<Profile />} />
             </Route>
 
