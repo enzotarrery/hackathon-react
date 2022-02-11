@@ -15,6 +15,7 @@ body {
   font-size: 1.4rem; /* 14px by default */
   font-family: 'Noto sans', sans-serif;
   background-color: colors.$white;
+  width: 100%;
 }
 
 /* WARNING: links are black by default, don't forget to reuse this syntax to override this default style */

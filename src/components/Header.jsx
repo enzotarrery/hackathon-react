@@ -7,12 +7,12 @@ const Header = () => {
   const [displayMob, setDisplayMob] = useState(false);
 
   const classButton = displayMob
-    ? "fa-solid fa-bars button__mobile white"
-    : "fa-solid fa-bars button__mobile";
+    ? "fa-solid fa-bars button__mobile burger__icon white"
+    : "fa-solid fa-bars burger__icon button__mobile";
   return (
     <header className="header">
       <div className="header__logo">LOGO</div>
-      <nav style={{ display: displayDesk ? "block" : "none" }}>
+      <nav className="header__nav">
         <Link to="/help" className="button">
           Aide
         </Link>
