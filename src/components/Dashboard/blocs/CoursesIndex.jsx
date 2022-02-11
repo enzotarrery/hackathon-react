@@ -82,7 +82,7 @@ const CoursesIndex = () => {
             </div>
           </div>
           <Link
-            to="/courses"
+            to="courses"
             className="dashboard-courses-bloc__button button button--tchat"
           >
             Tous les cours
@@ -131,7 +131,7 @@ const CoursesIndex = () => {
               </div>
             </div>
             <Link
-              to="/courses"
+              to="courses"
               className="dashboard-courses-bloc__button button button--tchat"
             >Tous les paiements</Link>
           </article>
