@@ -7,6 +7,7 @@ const Dashboard = () => {
     <div className="dashboard-parent">
       <Navigation />
       <div className="content">
+        {/* dashboard moniteur - accueil */}
         <Outlet />
       </div>
     </div>

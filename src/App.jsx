@@ -3,20 +3,21 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthReducer } from "./reducer";
 import { initialState } from "./states/states";
 import Layout from "./components/Layout";
-import Courses from './components/Courses';
+import Courses from "./components/Courses";
 import Home from "./views/Home";
-import Instructors from './views/Instructors';
-import CourseDetails from './views/CourseDetails';
-import CourseForm from './views/CourseForm';
-import PrivacyPolicy from './views/PrivacyPolicy';
-import Legals from './views/Legals';
-import Register from './views/Register';
-import Reservation from './views/Reservation';
+import Instructors from "./views/Instructors";
+import CourseDetails from "./views/CourseDetails";
+import CourseForm from "./views/CourseForm";
+import PrivacyPolicy from "./views/PrivacyPolicy";
+import Legals from "./views/Legals";
+import Register from "./views/Register";
+import Reservation from "./views/Reservation";
 import { Login, Logout } from "./views/Auth";
 import Tchat from "./views/Tchat";
 import Dashboard from "./views/Dashboard";
 import Profile from "./views/Profile";
 import Help from "./views/Help";
+import CoursesIndex from "./components/Dashboard/blocs/CoursesIndex";
 import Contact from "./views/Contact";
 import NotFound from "./views/NotFound";
 
@@ -80,10 +81,11 @@ const App = () => {
       .then((data) => {
         if (data.email) {
           dispatch({
-            type: 'login_success', payload: {
-              user: data
-            }
-          })
+            type: "login_success",
+            payload: {
+              user: data,
+            },
+          });
         }
       });
   };
@@ -110,31 +112,33 @@ const App = () => {
 
             {/* Dashboard */}
             <Route path="/dashboard" element={<Dashboard />}>
+              <Route index element={<CoursesIndex />} />
+              <Route path="stats" element={<CoursesIndex />} />
               <Route path="tchat" element={<Tchat />} />
               <Route path="account" element={<Profile />} />
             </Route>
 
             {/* Instructor */}
-            <Route path='/instructors' element={<Instructors />} />
-            <Route path='/instructor/:id'>
-              <Route path='courses' element={<Courses />} />
-              <Route path='courses/booking' element={<Reservation />} />
+            <Route path="/instructors" element={<Instructors />} />
+            <Route path="/instructor/:id">
+              <Route path="courses" element={<Courses />} />
+              <Route path="courses/booking" element={<Reservation />} />
             </Route>
 
             {/* Course */}
-            <Route path='/courses'>
-              <Route path='add' element={<CourseForm />} />
+            <Route path="/courses">
+              <Route path="add" element={<CourseForm />} />
             </Route>
-            <Route path='/course'>
-              <Route path=':id' element={<CourseDetails />} />
+            <Route path="/course">
+              <Route path=":id" element={<CourseDetails />} />
             </Route>
 
             {/* Help */}
-            <Route path='/help' element={<Help />} />
+            <Route path="/help" element={<Help />} />
 
             {/* Miscellaneous */}
-            <Route path='/legals' element={<Legals />} />
-            <Route path='/privacy' element={<PrivacyPolicy />} />
+            <Route path="/legals" element={<Legals />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
 
             {/* Other */}
             <Route path='/register' element={<Register />} />

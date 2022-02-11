@@ -1,0 +1,80 @@
+@use '../variables/colors';
+@use '../variables/mediaqueries' as size;
+
+.dashboard-courses-bloc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    &__title {
+        margin: 2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    &__card {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        background: colors.$white;
+        border: solid 3px colors.$black;
+        margin: 2rem;
+        padding-top: 2rem;
+        border-radius: 37px;
+        height: 50vh;
+        width: 50vw;
+    }
+
+    &__titles {
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+    
+    &__students {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 2rem;
+        padding-left: 2rem;
+        span {
+            display: block;
+        }
+    }
+
+    .division {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: colors.$black;
+    }
+
+    &__button {
+        align-self: flex-end;
+        margin-right: 3rem;
+        width: 50%;
+    }
+
+    .progression {
+        display: block;
+        width: 30%;
+        height: .8rem;
+        background: colors.$white;
+        border: solid 1px colors.$black;
+    }
+
+    .color {
+        display: block;
+        width: 20%;
+        height: .8rem;
+        background: colors.$green;
+    }
+}
+@media only screen and (min-width: size.$small) {
+    .burger {
+      &__icon {
+        display: none;
+      }
+    }
+}
