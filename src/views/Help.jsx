@@ -19,7 +19,7 @@ const Help = () => {
           <h3 className="home--card__title">My Card Title</h3>
           <span className="separate"></span>
           <div className="home--card__body">
-            <img src="https://fakeimg.pl/300/" alt='fakeImg' />
+            <img className="home--card__img" src="/img/ope.jpg" alt='fakeImg' />
           </div>
         </div>
       </section>
@@ -29,7 +29,7 @@ const Help = () => {
           <h3 className="home--card__title">My Card Title</h3>
           <span className="separate"></span>
           <div className="home--card__body">
-            <img src="https://fakeimg.pl/300/" alt='fakeImg' />
+            <img className="home--card__img" src="/img/ren.jpg" alt='fakeImg' />
           </div>
         </div>
         <div className="home__presentation revert">
@@ -54,7 +54,7 @@ const Help = () => {
           <h3 className="home--card__title">My Card Title</h3>
           <span className="separate"></span>
           <div className="home--card__body">
-            <img src="https://fakeimg.pl/300/" alt='fakeImg' />
+            <img className="home--card__img" src="/img/truck.jpg" alt='fakeImg' />
           </div>
         </div>
       </section>
