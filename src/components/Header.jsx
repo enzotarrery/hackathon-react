@@ -19,10 +19,10 @@ const Header = () => {
         <Link to="/help" className="button">
           Aide
         </Link>
-        <Link to="/logout" className="button">
+        <Link to="/" className="button">
           Donner des cours
         </Link>
-        <Link to="/logout" className="button">
+        <Link to="/register" className="button">
           Inscription
         </Link>
         <Link to="/login" className="button button--primary">
