@@ -9,23 +9,20 @@ const Register = () => {
   })
 
   const registerUser = (infos) => {
-    // const formData = new FormData()
-    // formData.append('firstName', infos.firstName)
-    // formData.append('lastName', infos.lastName)
-    // formData.append('email', infos.email)
-    // formData.append('password', infos.password)
-    // formData.append('role', infos.role)
-    // formData.append('favoritePlacesId', infos.favoritePlacesId)
-    // formData.append('favoriteInstructorsId', infos.favoriteInstructorsId)
-    // formData.append('instructorInfos', infos.instructorInfos)
-    // // formData.append('image', infos.car[0])
-    // formData.append('isAvailable', infos.isAvailable)
+    const formData = new FormData()
+    formData.append('firstName', infos.firstName)
+    formData.append('lastName', infos.lastName)
+    formData.append('email', infos.email)
+    formData.append('password', infos.password)
+    formData.append('role', infos.role)
+    formData.append('favoritePlacesId', infos.favoritePlacesId)
+    formData.append('favoriteInstructorsId', infos.favoriteInstructorsId)
+    formData.append('car', infos.car[0])
+    formData.append('isAvailable', infos.isAvailable)
 
     const options = {
       method: 'POST',
-      headers: { "Content-Type": "application/json"},
-      // headers: { "Content-Type": "multipart/form-data"},
-      body : JSON.stringify(infos)
+      body : formData
     }
 
     fetch(`/api/users`, options)
