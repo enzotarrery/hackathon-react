@@ -1,7 +1,6 @@
 @use '../variables/colors';
 @use '../variables/mediaqueries' as size;
 
-
 .header {
   height: 5rem;
   width: 100%;
@@ -10,12 +9,16 @@
   background-color: colors.$white;
   display: flex;
   justify-content: space-between;
+  padding: 1rem;
   &__nav {
     display: none;
 
     a {
       font-weight: bold;
     }
+  }
+  &__logo {
+    width: 15rem;
   }
 }
 @media only screen and (min-width: size.$small) {

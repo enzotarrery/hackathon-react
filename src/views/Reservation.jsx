@@ -1,9 +1,14 @@
 import React from 'react'
-import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react/cjs/react.development';
+import { Navigate, useParams } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react/cjs/react.development';
+import { AuthContext } from '../App';
+import Instructor from '../components/Instructor';
 import CourseForm from './CourseForm';
 
 const Reservation = () => {
+
+    /* Context */
+    const [ state, actions ] = useContext(AuthContext);
 
     /* Routes */
     const params = useParams();
@@ -27,22 +32,23 @@ const Reservation = () => {
 
     /* Render */
     return (
-        <section className='reservation'>
-            <h2 className='title reservation__title'>Réservation d'un cours avec { `${ instructor.firstName } ${ instructor.lastName }` }</h2>
+        <>
+            {
+                state.loading && !state.user && <Navigate to='/login' />
+            }
+            <section className='reservation'>
+                <h2 className='title reservation__title'>Réservation d'un cours avec { `${ instructor.firstName } ${ instructor.lastName }` }</h2>
             
-            <figure className='instructor'>
-                <img className='instructor__avatar' src="" alt="Instructor's avatar" />
-                <figcaption className='instructor__info'>
-                    <header className='instructor__header'>
-                        <h2 className='title intructor__name'>{ `${ instructor.firstName } ${ instructor.lastName }` }</h2>
-                        <h3 className='subtitle instructor__neighbourhood'>Quartier</h3>
-                    </header>
-                    <section className='instructor__content'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis pariatur adipisci ea, fugiat rem est exercitationem. Necessitatibus error quaerat autem iste quis quisquam facilis, temporibus itaque animi nisi. Excepturi, blanditiis.</section>
-                </figcaption>
-            </figure>
+                <section className="reservation__content">
+                    <Instructor
+                        data={ instructor }
+                        buttons={ false }
+                    />
 
-            <CourseForm instructorId={ params.id } />
-        </section>
+                    <CourseForm instructorId={ params.id } />
+                </section>
+            </section>
+        </>
     );
 }
 

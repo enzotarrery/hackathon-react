@@ -26,7 +26,7 @@ const settings = {
     upload: {
         uploadDir: path.join(
             __dirname,
-            '../../public/uploads'
+            '../public/uploads'
         ),
         baseUrl: '/uploads/'
     }

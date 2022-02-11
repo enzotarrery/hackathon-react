@@ -62,11 +62,11 @@ const RegisterForm = ({onSubmit}) => {
 
       {
         formState.role === 'instructor' && <div className='registerForm__radioGroup'>
-          <button onClick={() => fileRef.current.click()} className='registerForm__upload'>
+          <p onClick={() => fileRef.current.click()} className='registerForm__upload'>
             Choisir
-          </button>
+          </p>
           <label className='registerForm__additionalLabel' htmlFor="car">Veuillez télécharger la photo de votre véhicule</label>
-          <input className='hidden' ref={fileRef} type="file" name="car" id="car" /*onChange={handleFileChange}*//>
+          <input className='hidden' ref={fileRef} type="file" name="car" id="car" onChange={handleFileChange}/>
         </div>
       }
       

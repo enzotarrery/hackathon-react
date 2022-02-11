@@ -1,0 +1,18 @@
+@use '../variables/colors';
+@use '../variables/mixins';
+
+.course-form {
+    @include mixins.flexarize(column);
+    gap: 1rem;
+    padding: 2vw;
+    background-color: #fff;
+    border-radius: 10px;
+
+    &__button {
+        &, &:link, &:hover, &:visited {
+            background-color: colors.$white;
+            width: 100%;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@use '../variables/colors';
+@use '../variables/fonts';
+@use '../variables/mixins';
+
+.title {
+  font-size: 3rem;
+  font-family: "Hind Vadodara", sans-serif;
+  font-weight: bold;
+  color: colors.$black;
+  padding: 3%;
+}

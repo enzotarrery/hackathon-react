@@ -8,6 +8,7 @@ const Instructors = () => {
     /* States */
     const [ instructors, setInstructors ] = useState([]);
     const [ tag, setTag ] = useState('all');
+    const [ district, setDistrict ] = useState('');
 
     /* Functions */
     const getData = () => {
@@ -19,6 +20,10 @@ const Instructors = () => {
 
     const handleClick = (event) => {
         setTag(event.target.id);
+    }
+
+    const updateDistrict = (district) => {
+        setDistrict(district);
     }
 
     /* Hooks */
@@ -38,25 +43,36 @@ const Instructors = () => {
                     Disponibles
                 </li>
             </ul>
-            <Search type='places' />
+            <Search
+                type='places'
+                onChange={ updateDistrict }
+            />
             <ul className='instructors__list'>
                 {
-                    tag === 'all' && instructors.map((instructor) =>
-                        <Instructor
-                            key={ instructor.id }
-                            data={ instructor }
-                        />
-                    )
+                    tag === 'all' && instructors
+                        .filter((instructor) =>  district === '' ? true : instructor.district.toLowerCase().includes(district.toLowerCase()))
+                        .map((instructor) =>
+                            <li className='instructors__list-item'>
+                                <Instructor
+                                    key={ instructor.id }
+                                    data={ instructor }
+                                    buttons={ true }
+                                />
+                            </li>
+                        )
                 }
                 {
                     tag === 'availables' && instructors
-                        .filter((instructor) => instructor.isAvailable)
+                        .filter((instructor) => (district === '' ? true : instructor.district.toLowerCase().includes(district.toLowerCase())) && instructor.isAvailable)
                         .map((instructor) =>
-                            <Instructor
-                                key={ instructor.id }
-                                data={ instructor }
-                            />
-                    )
+                            <li className='instructors__list-item'>
+                                <Instructor
+                                    key={ instructor.id }
+                                    data={ instructor }
+                                    buttons={ true }
+                                />
+                            </li>
+                        )
                 }
             </ul>
         </section>
