@@ -1,0 +1,21 @@
+@use '../variables/colors';
+@use '../variables/fonts';
+@use '../variables/mixins';
+
+.notFound {
+  min-height: 90vh;
+  @include mixins.flexarize(column, center, center, nowrap);
+  gap: 2vh;
+
+  &__image {
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .notFound {
+    &__image {
+      max-width: 90%;
+    }
+  }
+}

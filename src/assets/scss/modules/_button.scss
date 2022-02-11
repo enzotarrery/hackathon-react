@@ -26,6 +26,12 @@
             background-color: transparent;
             border: 1px solid colors.$black;
             border-radius: 5px;
+            transition: background-color .25s;
+        }
+
+        &:hover {
+          background-color: colors.$black;
+          color: colors.$white;
         }
     }
 

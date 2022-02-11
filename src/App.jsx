@@ -19,6 +19,7 @@ import Profile from "./views/Profile";
 import Help from "./views/Help";
 import CoursesIndex from "./components/Dashboard/blocs/CoursesIndex";
 import Contact from "./views/Contact";
+import NotFound from "./views/NotFound";
 
 /* Context */
 const AuthContext = createContext();
@@ -140,8 +141,10 @@ const App = () => {
             <Route path="/privacy" element={<PrivacyPolicy />} />
 
             {/* Other */}
-            <Route path="/register" element={<Register />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='*' element={<NotFound />} />
+
           </Routes>
         </Layout>
       </BrowserRouter>
