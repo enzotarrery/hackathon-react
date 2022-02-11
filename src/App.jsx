@@ -5,31 +5,19 @@ import { initialState } from "./states/states";
 import Layout from "./components/Layout";
 import Courses from "./components/Courses";
 import Home from "./views/Home";
-<<<<<<< HEAD
 import Instructors from "./views/Instructors";
 import CourseDetails from "./views/CourseDetails";
 import CourseForm from "./views/CourseForm";
 import PrivacyPolicy from "./views/PrivacyPolicy";
 import Legals from "./views/Legals";
+import Register from "./views/Register";
 import Reservation from "./views/Reservation";
-import { Login, Logout } from "./views/Auth";
-import Tchat from "./views/Tchat";
-import Dashboard from "./views/Dashboard";
-import CoursesIndex from "./components/Dashboard/blocs/CoursesIndex";
-=======
-import Instructors from './views/Instructors';
-import CourseDetails from './views/CourseDetails';
-import CourseForm from './views/CourseForm';
-import PrivacyPolicy from './views/PrivacyPolicy';
-import Legals from './views/Legals';
-import Register from './views/Register';
-import Reservation from './views/Reservation';
 import { Login, Logout } from "./views/Auth";
 import Tchat from "./views/Tchat";
 import Dashboard from "./views/Dashboard";
 import Profile from "./views/Profile";
 import Help from "./views/Help";
->>>>>>> 5719e9ed3d17a5863e5bb90227c381a422eab1aa
+import CoursesIndex from "./components/Dashboard/blocs/CoursesIndex";
 
 /* Context */
 const AuthContext = createContext();
@@ -91,10 +79,11 @@ const App = () => {
       .then((data) => {
         if (data.email) {
           dispatch({
-            type: 'login_success', payload: {
-              user: data
-            }
-          })
+            type: "login_success",
+            payload: {
+              user: data,
+            },
+          });
         }
       });
   };
@@ -128,30 +117,29 @@ const App = () => {
             </Route>
 
             {/* Instructor */}
-            <Route path='/instructors' element={<Instructors />} />
-            <Route path='/instructor/:id'>
-              <Route path='courses' element={<Courses />} />
-              <Route path='courses/booking' element={<Reservation />} />
+            <Route path="/instructors" element={<Instructors />} />
+            <Route path="/instructor/:id">
+              <Route path="courses" element={<Courses />} />
+              <Route path="courses/booking" element={<Reservation />} />
             </Route>
 
             {/* Course */}
-            <Route path='/courses'>
-              <Route path='add' element={<CourseForm />} />
+            <Route path="/courses">
+              <Route path="add" element={<CourseForm />} />
             </Route>
-            <Route path='/course'>
-              <Route path=':id' element={<CourseDetails />} />
+            <Route path="/course">
+              <Route path=":id" element={<CourseDetails />} />
             </Route>
 
             {/* Help */}
-            <Route path='/help' element={<Help />} />
+            <Route path="/help" element={<Help />} />
 
             {/* Miscellaneous */}
-            <Route path='/legals' element={<Legals />} />
-            <Route path='/privacy' element={<PrivacyPolicy />} />
+            <Route path="/legals" element={<Legals />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
 
             {/* Other */}
-            <Route path='/register' element={<Register />} />
-
+            <Route path="/register" element={<Register />} />
           </Routes>
         </Layout>
       </BrowserRouter>
