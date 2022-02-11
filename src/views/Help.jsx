@@ -9,7 +9,7 @@ const Help = () => {
       <section className="home">
         <div className="home__presentation">
           <h2 className="home__title--section">
-            <span>Organisé</span> <br />
+            <span>Organisez</span> <br />
             tout votre travail sur une seule plateforme
           </h2>
           <h3 className="home__subtitle">
@@ -30,7 +30,7 @@ const Help = () => {
         </div>
         <div className="home__presentation revert">
           <h2 className="home__title--section">
-            <span>GAGNÉ</span><br />
+            <span>Gagnez</span><br />
             Du temps en obtenant un rendez-vous en quelques clics
           </h2>
           <h3 className="home__subtitle">
@@ -41,7 +41,7 @@ const Help = () => {
       <section className="home">
         <div className="home__presentation">
           <h2 className="home__title--section">
-            <span>Organisé</span> <br />
+            <span>Organisez</span> <br />
             tout votre travail sur une seule plateforme
           </h2>
           <h3 className="home__subtitle">
