@@ -25,41 +25,33 @@ const LoginForm = props => {
       return onSubmit(formState)
   }
 
-  return <div className="">
-    <form onSubmit={handleSubmit}>
-      <label
-          className=""
-          htmlFor="username"
-      >Email</label>
+  return <form className='loginForm' onSubmit={handleSubmit}>
+      <h2 className='loginForm__title'>Login to access your account</h2>
+
       <input
           type="email"
           id="username"
-          className=""
-          placeholder="Email"
+          className="loginForm__input"
+          placeholder="Email address"
           name="username"
           value={formState.username}
           onChange={handleFormChange}
       />
 
-      <label
-          className=""
-          htmlFor="password"
-      >Mot de passe</label>
       <input
           type="password"
-          className=""
-          placeholder="Mot de passe"
+          className="loginForm__input"
+          placeholder="Password"
           name="password"
           id="password"
           value={formState.password}
           onChange={handleFormChange}
       />
 
-      <input type="submit"
-          value="Connexion"
+      <input className='loginForm__submit' type="submit"
+          value="Login"
       />
-      </form>
-  </div>
+    </form>
 }
 
 LoginForm.propTypes = {

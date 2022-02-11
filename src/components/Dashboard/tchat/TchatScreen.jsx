@@ -17,6 +17,10 @@ const TchatScreen = ({ messagesDisplay }) => {
             </div>
           );
         })}
+      <div className="messages__tosend">
+        <input type="messages" class="messages__input" />
+        <button className="button button--tchat">Envoyer</button>
+      </div>
     </div>
   );
 };

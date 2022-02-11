@@ -1,0 +1,91 @@
+@use '../variables/colors';
+@use '../variables/fonts';
+@use '../variables/mixins';
+
+.login {
+
+  &__container {
+    // height: 100%; //! to uncomment after global style pull
+    height: 90vh; //! to del after global style pull
+
+    @include mixins.flexarize(row, center, center, nowrap);
+    gap: 2%;
+  }
+
+  &__card {
+    height: 70%;
+    width: 30%;
+    background-color: colors.$black;
+    border-radius: 30px;
+    padding: 4%;
+
+    @include mixins.flexarize(column, center, center, nowrap);
+    gap: 4%;
+
+  }
+
+  &__title {
+    color: colors.$white;
+    font-size: 2rem;
+    font-family: fonts.$font-main;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10%;
+
+  }
+
+  &__btnAlt:link, &__btnAlt:visited, &__btnAlt:hover  {
+    padding: 5%;
+    color: colors.$white;
+    border: 1px solid colors.$white;
+    width: 80%;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  &__separator {
+    color: colors.$white;
+    @include mixins.flexarize(row, center, center, nowrap);
+    gap: 10%;
+
+    margin: 5vh 0;
+
+    &::before, &::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 10vw;
+      background-color: colors.$white;
+    }
+  }
+
+  &__link {
+    color: colors.$white;
+
+    font-family: fonts.$font-main;
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .login {
+    &__card {
+      width: 40%;
+    }
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .login {
+    &__container {
+      // height: 100%; //! to uncomment after global style pull
+      min-height: 100vh; //! to del after global style pull
+  
+      @include mixins.flexarize(column, center, center, nowrap);
+    }
+
+    &__card {
+      width: 70%;
+    }
+  }
+}

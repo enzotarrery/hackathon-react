@@ -1,0 +1,16 @@
+@use '../variables/colors';
+@use '../variables/fonts';
+@use '../variables/mixins';
+
+.register {
+  @include mixins.flexarize(column, center, center, nowrap);
+  gap: 3%;
+
+  &__title {
+    align-self: flex-start;
+    font-size: 3rem;
+    font-family: fonts.$font-main;
+    font-weight: bold;
+    padding: 3%;
+  }
+}
