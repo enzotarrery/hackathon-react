@@ -26,7 +26,7 @@ const Navigation = () => {
           </Link>
         </li>
         <li>
-          <Link to="/dashboard" className="navigation__item">
+          <Link to="/dashboard/courses" className="navigation__item">
             <img
               className="navigation__picto"
               src="/img/pictos/planning.svg"
