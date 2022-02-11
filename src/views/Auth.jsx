@@ -14,20 +14,33 @@ const Login = props => {
 
   const location = useLocation()
 
-  return <div>
-    <p>Login</p>
-    <LoginForm 
-      onSubmit={credentials => Login(credentials)}
-    />
+  return <section className='login__container'>
     {
       state.user && <Navigate 
         to={{pathname: "/"}}
       />
     }
-    {
-      state.error && <p>Echec de la connexion</p>
-    }
-  </div>
+
+    <section className='login__card'>
+      <h1 className='login__title'>Connexion</h1>
+      <LoginForm
+        onSubmit={credentials => Login(credentials)}
+      />
+      {
+        state.error && <p className='loginForm__status--error'>Echec de la connexion</p>
+      }
+    </section>
+
+    <section className='login__card'>
+      <a className='login__btnAlt' href="https://google.com">Se connecter avec Google</a>
+      <a className='login__btnAlt' href="https://facebook.com">Se connecter avec Facebook</a>
+      <span className='login__separator'>ou</span>
+      <Link to='/register'>
+        <p className='login__link'>Créer un compte</p>
+      </Link>
+    </section>
+
+  </section>
 }
 
 const Logout = props => {

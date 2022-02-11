@@ -10,10 +10,12 @@ import CourseDetails from './views/CourseDetails';
 import CourseForm from './views/CourseForm';
 import PrivacyPolicy from './views/PrivacyPolicy';
 import Legals from './views/Legals';
+import Register from './views/Register';
 import Reservation from './views/Reservation';
 import { Login, Logout } from "./views/Auth";
 import Tchat from "./views/Tchat";
 import Dashboard from "./views/Dashboard";
+import Profile from "./views/Profile";
 
 /* Context */
 const AuthContext = createContext();
@@ -75,13 +77,10 @@ const App = () => {
       .then((data) => {
         if (data.email) {
           dispatch({
-            type: "login_success",
-            payload: {
-              user: {
-                username: data.email,
-              },
-            },
-          });
+            type: 'login_success', payload: {
+              user: data
+            }
+          })
         }
       });
   };
@@ -100,36 +99,40 @@ const App = () => {
       <BrowserRouter>
         <Layout>
           <Routes>
-            <Route index={ true } element={ <Home /> } />
-            
-            {/* Authentication */ }
+            <Route index={true} element={<Home />} />
+
+            {/* Authentication */}
             <Route path="/login" element={<Login />} />
-            <Route path="/logout" element={ <Logout /> } />
-            
-            {/* Dashboard */ }
+            <Route path="/logout" element={<Logout />} />
+
+            {/* Dashboard */}
             <Route path="/dashboard" element={<Dashboard />}>
               <Route path="tchat" element={<Tchat />} />
+              <Route path="account" element={<Profile />} />
             </Route>
-          
+
             {/* Instructor */}
-            <Route path='/instructors' element={ <Instructors /> } />
+            <Route path='/instructors' element={<Instructors />} />
             <Route path='/instructor/:id'>
-              <Route path='courses' element={ <Courses /> }/>
-              <Route path='courses/booking' element={ <Reservation /> }/>
+              <Route path='courses' element={<Courses />} />
+              <Route path='courses/booking' element={<Reservation />} />
             </Route>
-          
+
             {/* Course */}
             <Route path='/courses'>
-              <Route path='add' element={ <CourseForm /> } />
+              <Route path='add' element={<CourseForm />} />
             </Route>
             <Route path='/course'>
-              <Route path=':id' element={ <CourseDetails /> } />
+              <Route path=':id' element={<CourseDetails />} />
             </Route>
-          
+
             {/* Miscellaneous */}
             <Route path='/legals' element={ <Legals /> } />
             <Route path='/privacy' element={ <PrivacyPolicy /> } />
-            
+
+            {/* Other */ }
+            <Route path='/register' element={ <Register /> } />
+
           </Routes>
         </Layout>
       </BrowserRouter>
