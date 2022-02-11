@@ -1,0 +1,65 @@
+@use '../variables/colors';
+@use '../variables/fonts';
+@use '../variables/mixins';
+
+.about {
+  @include mixins.flexarize(row, center, center, nowrap);
+  height: 90vh;
+  gap: 5%;
+
+  &__imageContainer {
+    width: 40%;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 20px;
+      left: -20px;
+      border-radius: 30px;
+      background-color: colors.$black;
+      z-index: -1;
+    }
+  }
+
+  &__image {
+    border: 10px solid colors.$black;
+    border-radius: 30px;
+
+  }
+
+  &__description {
+    width: 30%;
+    @include mixins.flexarize(column, center, flex-start, nowrap);
+  }
+
+  &__content {
+    font-size: 1.8rem;
+    padding: 1% 0;
+    font-family: fonts.$font-main;
+
+    &--grey {
+      font-size: 1.5rem;
+      color: #737373;
+    }
+  }
+
+}
+
+@media screen and (max-width: 775px) {
+  .about {
+    @include mixins.flexarize(column, center, center, nowrap);
+    gap: 10vh;
+    &__imageContainer {
+      width: 60%;
+    }
+    &__description {
+      width: 80%;
+    }
+  }
+
+  
+}
