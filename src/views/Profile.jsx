@@ -88,24 +88,31 @@ const Profile = () => {
             <main className="profile__main">
                 <div className='profile__header'>
                     <img className='profile__profil-picture' src={loggedUser.picture ? loggedUser.picture : "/img/default_pp.jpg"} alt="" />
-                    <button className='button'>Changer de photo</button>
-                    <button className='button' disabled={!loggedUser.picture}>Supprimer la photo</button>
+                    <button className='button profile__btn-photo'>Changer de photo</button>
+                    <button className='button profile__btn-photo profile__btn-photo--disabled' disabled={!loggedUser.picture}>Supprimer la photo</button>
                 </div>
 
 
-                <form className='profile__form' onSubmit={handleSubmit}>
-                    <input className='profile__input' type="text" name='firstName' id='firstName' value={formState.firstName} onChange={handleFormChange} />
-                    <input className='profile__input' type="text" name='lastName' id='lastName' value={formState.lastName} onChange={handleFormChange} />
-                    <input className='profile__input' type="mail" name='email' id='email' value={formState.email} onChange={handleFormChange} />
-                    <input className='profile__input' type="password" name='password' id='password' value={formState.password} onChange={handleFormChange} />
-                    <select className='profile__input profile__input--select' onChange={handlePlaceChange} name="place" id="place" multiple={true} value={formState.favoritePlacesId}>
-                        {places.map(place => {
-                            return (
-                                <option className='profile__options' key={place.id} value={place.id}>{place.name}</option>
-                            )
-                        })}
-                    </select>
-                    <button className='button profile__submit' type="submit">Valider</button>
+                <form className={loggedUser.role === "student" ? "profile__form" : "profile__form profile__form--dark"} onSubmit={handleSubmit}>
+                    <fieldset className='profile__form-group'>
+                        <legend className='profile__subtitle'>Informations générales</legend>
+                        <input className='profile__input' type="text" name='firstName' id='firstName' value={formState.firstName} onChange={handleFormChange} />
+                        <input className='profile__input' type="text" name='lastName' id='lastName' value={formState.lastName} onChange={handleFormChange} />
+                        <input className='profile__input' type="mail" name='email' id='email' value={formState.email} onChange={handleFormChange} />
+                        <input className='profile__input' type="password" name='password' id='password' value={formState.password} onChange={handleFormChange} />
+                    </fieldset>
+
+                    <fieldset className='profile__form-group'>
+                        <legend className='profile__subtitle'>Vos lieux favoris</legend>
+                        <select className='profile__input profile__input--select' onChange={handlePlaceChange} name="place" id="place" multiple={true} value={formState.favoritePlacesId}>
+                            {places.map(place => {
+                                return (
+                                    <option className='profile__options' key={place.id} value={place.id}>{place.name}</option>
+                                )
+                            })}
+                        </select>
+                        <button className={loggedUser.role === "student" ? "button profile__submit" : "button profile__submit profile__submit--dark"} type="submit">Valider</button>
+                    </fieldset>
                 </form>
             </main>
         </section>

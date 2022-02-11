@@ -15,6 +15,7 @@ import Reservation from './views/Reservation';
 import { Login, Logout } from "./views/Auth";
 import Tchat from "./views/Tchat";
 import Dashboard from "./views/Dashboard";
+import Profile from "./views/Profile";
 
 /* Context */
 const AuthContext = createContext();
@@ -107,6 +108,7 @@ const App = () => {
             {/* Dashboard */}
             <Route path="/dashboard" element={<Dashboard />}>
               <Route path="tchat" element={<Tchat />} />
+              <Route path="account" element={<Profile />} />
             </Route>
 
             {/* Instructor */}

@@ -1,4 +1,5 @@
 .profile {
+  font-family: 'Hind Vadodara', sans-serif;
   background-color: #fbfbf2;
 
   &--dark {
@@ -10,83 +11,144 @@
     font-size: 35px;
     font-weight: bold;
     text-align: center;
-    padding: 50px 0;
+    padding-top: 50px;
+  }
+
+  &__subtitle {
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 35px;
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: -0.3rem;
+      left: -5rem;
+      height: 25px;
+      width: 25px;
+      background-color: #c4c4c4;
+      border-radius: 50%;
+    }
   }
 
   &__main {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 50px;
+    flex-wrap: wrap;
+    padding: 25px;
     margin: auto;
   }
 
   &__header {
-    flex: 0 0 30%;
-    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
   }
 
   &__profil-picture {
-    height: 250px;
-    width: 250px;
-    border-radius: 70px;
+    height: 150px;
+    width: 150px;
+    margin: auto;
+    border-radius: 35px;
   }
+  &__btn-photo {
+    margin: auto;
+    color: #32292f;
+    background-color: #fbfbf2;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Hind Vadodara', sans-serif;
+    width: 200px;
+    border-radius: 8px;
+    border: 1px solid #32292f;
+    cursor: pointer;
+    margin-top: 25px;
 
-  .button {
-    display: block;
+    &--disabled {
+      cursor: default;
+      margin: 25px 0;
+      background-color: #fbfbf273;
+    }
   }
 
   &__form {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: flex-start;
+    justify-content: center;
     flex: 0 0 50%;
+    padding: 3rem;
+    border-radius: 35px;
+    border: 2px solid #32292f;
+    box-shadow: 10px 10px 0px 5px #32292f;
+
+    &-group {
+      padding-bottom: 25px;
+    }
+
+    &--dark {
+      border: 2px solid #fbfbf2;
+      box-shadow: 10px 10px 0px 5px #fbfbf2;
+    }
   }
 
   &__submit {
     width: 100px;
-    margin: auto;
-    display: inline-block;
+    display: block;
     margin-bottom: 0;
+    background-color: #fbfbf2;
     font-weight: 600;
     text-align: center;
     white-space: nowrap;
-    vertical-align: middle;
-    border: 1px solid transparent;
-    padding: 6px 12px;
+    border: 1px solid #32292f;
     font-size: 18px;
+    font-family: 'Hind Vadodara', sans-serif;
     line-height: 1.42857143;
     border-radius: 8px;
     cursor: pointer;
-  }
+    &:hover {
+      transition: 0.3s ease-in-out;
+      background-color: #32292f;
+      color: #fbfbf2;
+    }
 
-  &__label {
-    text-align: left;
+    &--dark {
+      &:hover {
+        background-color: #ffffff;
+      }
+    }
   }
 
   &__input {
+    border: none;
     margin: 2.5rem 0;
-    text-transform: uppercase;
-    font-weight: 600;
     height: 4rem;
+    max-width: 250px;
+    margin-right: 20px;
     padding: 1rem;
-    border-radius: 5px;
-    background-color: #fafcfd;
-    border: 3px solid transparent;
+    background-color: #fbfbf2;
+    border: 1px solid #32292f;
     transition: 0.3s ease-in-out;
 
     &:focus {
-      box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
-      outline: 0;
-      background-color: #b13c3c;
-      color: #000;
+      border: 2px solid #32292f;
+      outline: 0 !important;
+      color: #b13c3c;
     }
   }
 
   &__input--select {
-    min-height: 10rem;
+    min-height: 20rem;
     &:focus {
-      background-color: #fff;
+      border: none;
+      background-color: #fbfbf2;
+      border: 2px solid #32292f;
+      color: #32292f;
     }
     &:not(:disabled) option {
       padding: 2px;
@@ -94,8 +156,60 @@
 
       &:checked {
         border-radius: 5px;
-        color: black;
+        color: #32292f;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .profile {
+    &__header {
+      flex: 0 0 40%;
+
+      align-self: flex-start;
+    }
+
+    &__main {
+      padding: 50px;
+      flex-direction: row;
+    }
+
+    &__profil-picture {
+      height: 300px;
+      width: 300px;
+      border-radius: 70px;
+    }
+
+    &__input {
+      margin-right: 40px;
+    }
+  }
+}
+
+@media screen and (min-width: 1067px) {
+  .profile {
+    &__header {
+      flex: 0 0 30%;
+    }
+
+    &__form {
+      flex: 0 0 60%;
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: space-between;
+
+      &-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    &__submit {
+      margin: 2.5rem 0;
+      align-self: flex-start;
     }
   }
 }
