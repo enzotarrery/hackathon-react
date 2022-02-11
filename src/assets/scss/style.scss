@@ -11,6 +11,7 @@
 @use 'global/base';
 
 /* 3 - modules */
+@use 'modules/title';
 @use 'modules/header';
 @use 'modules/footer';
 @use 'modules/hidden';
@@ -25,6 +26,7 @@
 @use 'modules/navigationTchat';
 @use 'modules/messages';
 @use 'modules/tchatscreen.scss';
+@use 'modules/help';
 @use 'modules/home/home__card';
 @use 'modules/burger';
 @use 'modules/loginForm';
@@ -41,4 +43,3 @@
 @use 'pages/register';
 @use 'pages/profile';
 @use 'pages/legals';
-

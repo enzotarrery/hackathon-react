@@ -1,0 +1,122 @@
+.content {
+  background-color: #fbfbf2;
+  font-family: 'Hind Vadodara', sans-serif;
+}
+
+.help {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  border-radius: 35px;
+  border: 2px solid #32292f;
+  box-shadow: 10px 10px 0px 5px #32292f;
+  margin-bottom: 50px;
+
+  &__title--page {
+    font-size: 44px;
+    font-weight: bold;
+    text-align: center;
+    padding: 50px 0;
+  }
+
+  &__presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 0 100%;
+    margin-bottom: 3rem;
+    padding: 1rem;
+  }
+  &__title {
+    font-size: 4.4rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 3.5rem;
+
+    &--section {
+      span {
+        font-weight: bold;
+        font-size: 3.6rem;
+        line-height: 1.5;
+      }
+
+      font-weight: bold;
+      font-size: 2.6rem;
+      margin-bottom: 3.5rem;
+    }
+  }
+  &__subtitle {
+    font-weight: bold;
+    margin-bottom: 3.5rem;
+    line-height: 1.2;
+    font-size: 1.7rem;
+  }
+
+  .revert {
+    text-align: right;
+    margin-top: 50px;
+  }
+}
+@media only screen and (min-width: 767px) {
+  .content {
+    margin: 0 50px;
+  }
+  .help {
+    padding: 2rem 4rem;
+    align-items: center;
+
+    &__presentation {
+      padding: 2rem;
+    }
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .content {
+    margin: 0 150px;
+  }
+  .help {
+    flex-direction: row;
+    padding: 2rem;
+    justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 6rem;
+
+    &__presentation {
+      flex: 0 0 50%;
+    }
+  }
+}
+
+.help--card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1.8rem;
+  }
+  &__body {
+    margin: 2.5rem 0;
+  }
+
+  &__img {
+    border-radius: 70px;
+    border: 2px solid #32292f;
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (min-width: 767px) {
+  .help--card {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .help--card {
+    flex: 0 0 50%;
+    margin: 0 0;
+    max-width: 40rem;
+  }
+}

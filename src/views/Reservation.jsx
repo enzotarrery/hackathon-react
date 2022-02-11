@@ -1,10 +1,14 @@
 import React from 'react'
-import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react/cjs/react.development';
+import { Navigate, useParams } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react/cjs/react.development';
+import { AuthContext } from '../App';
 import Instructor from '../components/Instructor';
 import CourseForm from './CourseForm';
 
 const Reservation = () => {
+
+    /* Context */
+    const [ state, actions ] = useContext(AuthContext);
 
     /* Routes */
     const params = useParams();
@@ -28,18 +32,23 @@ const Reservation = () => {
 
     /* Render */
     return (
-        <section className='reservation'>
-            <h2 className='title reservation__title'>Réservation d'un cours avec { `${ instructor.firstName } ${ instructor.lastName }` }</h2>
+        <>
+            {
+                state.loading && !state.user && <Navigate to='/login' />
+            }
+            <section className='reservation'>
+                <h2 className='title reservation__title'>Réservation d'un cours avec { `${ instructor.firstName } ${ instructor.lastName }` }</h2>
             
-            <section className="reservation__content">
-                <Instructor
-                    data={ instructor }
-                    buttons={ false }
-                />
+                <section className="reservation__content">
+                    <Instructor
+                        data={ instructor }
+                        buttons={ false }
+                    />
 
-                <CourseForm instructorId={ params.id } />
+                    <CourseForm instructorId={ params.id } />
+                </section>
             </section>
-        </section>
+        </>
     );
 }
 

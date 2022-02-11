@@ -9,4 +9,19 @@
   background-color: colors.$white;
   display: flex;
   justify-content: space-between;
+  &__nav {
+    display: none;
+
+    a {
+      font-weight: bold;
+    }
+  }
+}
+@media only screen and (min-width: size.$small) {
+  .header {
+    padding: 2rem;
+    &__nav {
+      display: block;
+    }
+  }
 }
