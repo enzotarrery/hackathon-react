@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react/cjs/react.development';
+import { useContext, useEffect, useState } from 'react/cjs/react.development';
+import { AuthContext } from '../App';
 import Course from './Course';
 
 const Courses = () => {
@@ -8,15 +9,15 @@ const Courses = () => {
     /* Variables */
     const today = new Date();
 
-    /* Routes */
-    const params = useParams();
+    /* Context */
+    const [ state, actions ] = useContext(AuthContext);
 
     /* States */
     const [ courses, setCourses ] = useState([]);
 
     /* Functions */
     const getData = () => {
-        fetch('/api/sessions?instructorUserId=' + params.id)
+        fetch(`/api/sessions?${ state.user.role }UserId=${ state.user.id }`)
             .then((response) => response.json())
             .then((response) => setCourses(response))
             .catch((error) => console.warn(`ERROR (${error.code}) : ${error.message}.`));
@@ -25,17 +26,19 @@ const Courses = () => {
     /* Hooks */
     useEffect(() => {
         /* We fetch the data related to the events incoming */
-        getData();
+        if (!state.loading && state.user) getData();
     }, []);
+
+/*     console.log(courses); */
 
     /* Render */
     return (
         <section className='events'>
-            <h3 className='title title--secondary'>Cours à venir</h3>
-            <table className='table events__list'>
+            <h3 className='title events__title'>Cours à venir</h3>
+            <table className='events__list'>
                 <tbody className='table__content'>
                     {
-                        courses
+                        !state.loading && state.user && courses
                             .filter((course) => new Date(course.dateStart) >= today)
                             .map((course) =>
                                 <Course
@@ -46,7 +49,7 @@ const Courses = () => {
                     }
                 </tbody>
             </table>
-            <Link to='/courses/add' className='button button--events'>Ajouter un nouveau cours</Link>
+            <Link to='/courses/add' className='button button--primary'>Ajouter un nouveau cours</Link>
         </section>
     );
 }

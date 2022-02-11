@@ -109,6 +109,7 @@ const App = () => {
             {/* Dashboard */}
             <Route path="/dashboard" element={<Dashboard />}>
               <Route path="tchat" element={<Tchat />} />
+              <Route path="courses" element={<Courses />} />
               <Route path="account" element={<Profile />} />
             </Route>
 
