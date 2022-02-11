@@ -993,6 +993,34 @@
       "instructorInfos": {},
       "isAvailable": null,
       "role": "student"
+    },
+    {
+      "firstName": "toto",
+      "lastName": "toto",
+      "email": "toto@toto.to",
+      "password": "brbrbtr",
+      "role": "student",
+      "favoritePlacesId": [],
+      "favoriteInstructorsId": [],
+      "instructorInfos": {
+        "car": ""
+      },
+      "isAvailable": true,
+      "id": 60
+    },
+    {
+      "firstName": "toto",
+      "lastName": "toto",
+      "email": "toto@toto.to",
+      "password": "brbrbtr",
+      "role": "student",
+      "favoritePlacesId": [],
+      "favoriteInstructorsId": [],
+      "instructorInfos": {
+        "car": ""
+      },
+      "isAvailable": true,
+      "id": 61
     }
   ],
   "sessions": [

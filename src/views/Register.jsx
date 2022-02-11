@@ -46,11 +46,11 @@ const Register = () => {
     })
   }
 
-  return (<div>
-    <p>Hello Register !</p>
+  return (<section className='register'>
+    <h1 className='register__title'>Créez votre compte gratuitement</h1>
     <RegisterForm onSubmit={infos => registerUser(infos)}/>
     <p>{registered.msg}</p>
-  </div>
+  </section>
   );
 }
 
