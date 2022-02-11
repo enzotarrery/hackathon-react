@@ -1,0 +1,77 @@
+@use '../variables/colors';
+@use '../variables/mixins';
+
+.instructor {
+    @include mixins.flexarize(column, space-between);
+    gap: 2rem;
+    position: relative;
+    padding: 10vw;
+    width: 100%;
+    background-color: colors.$white;
+    border: 2.5px solid colors.$black;
+    border-radius: 40px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        z-index: -5;
+        width: 100%;
+        height: 100%;
+        border-radius: 40px;
+        background-color: colors.$black;
+    }
+
+    &__avatar {
+        width: 100%;
+    }
+
+    &__info {
+        @include mixins.flexarize(column);
+        gap: 2rem;
+    }
+
+    &__name {
+        font: {
+            weight: bold;
+            size: 5vw;
+        }
+    }
+
+    &__content {
+        @include mixins.flexarize(column, center);
+        gap: 2rem;
+        text-align: justify;
+    }
+
+    &__line {
+        @include mixins.flexarize(row);
+        gap: 1rem;
+    }
+
+    &__buttons {
+        @include mixins.flexarize(row, space-between, center, wrap);
+        gap: 1rem;
+        width: 100%;
+    }
+
+    &__button {
+        @include mixins.flexarize(column, center, center);
+        flex: 1 0 0%;
+
+        &--inline {
+            flex: 0 0 45%;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .instructor {
+        padding: 5vw;
+
+        &__name {
+            font-size: 2vw;
+        }
+    }
+}

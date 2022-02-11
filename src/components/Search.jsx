@@ -1,3 +1,4 @@
+import { createEvent } from '@testing-library/react';
 import React from 'react'
 import { useEffect, useState } from 'react/cjs/react.development';
 
@@ -18,6 +19,7 @@ const Search = (props) => {
 
     const handleChange = (event) => {
         setSearch(event.target.value);
+        props.onChange(event.target.value);
     }
 
     const handleFocus = (event) => {
@@ -26,6 +28,10 @@ const Search = (props) => {
 
     const handleBlur = (event) => {
         setVisible(false);
+    }
+
+    const handleClick = (event) => {
+        setSearch(event.target.textContent);
     }
 
     /* Hooks */
@@ -45,7 +51,7 @@ const Search = (props) => {
                 onFocus={ handleFocus }
                 onBlur={ handleBlur }
             />
-            <ul className={ `dropdown search__list ${ !visible ? 'hidden' : '' }` }>
+            <ul className={ `dropdown search__list ${ !visible ? 'dropdown--hidden' : '' }` }>
                 {
                     data
                         .filter((item) => item.name
@@ -54,12 +60,14 @@ const Search = (props) => {
                         )
                         .map((item) => <li
                             key={ item.id }
-                        >
-                            { item.name }
-                        </li>
-                    )
-                }
-            </ul>
+                            className='dropdown__item'
+                            onClick={ handleClick }
+                            >
+                                { item.name }
+                            </li>
+                        )
+                    }
+            </ul>  
         </section>
     );
 }

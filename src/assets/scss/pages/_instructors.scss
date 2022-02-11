@@ -1,0 +1,26 @@
+@use '../variables/mixins';
+
+.instructors {
+    @include mixins.flexarize(column);
+    gap: 4rem;
+
+    &__list {
+        @include mixins.flexarize(column, flex-start, center);
+        width: 100%;
+        gap: 5rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .instructors {
+
+        &__list {
+            @include mixins.flexarize(row, space-between, flex-start, wrap);
+            gap: 5rem;
+        }
+
+        &__list-item {
+            flex: 0 0 45%;
+        }
+    }
+}
