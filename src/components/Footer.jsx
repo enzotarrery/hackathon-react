@@ -12,6 +12,7 @@ const Footer = () => {
               <Link to='/help'> <p className='footer__link'>Aide</p> </Link>
               <Link to='/courses'> <p className='footer__link'>Donner des cours</p> </Link>
               <Link to='/register'> <p className='footer__link'>Inscription</p> </Link>
+              <Link to='/about'> <p className='footer__link'>A propos de nous</p> </Link>
 
             </section>
             <section className='footer__columns'>

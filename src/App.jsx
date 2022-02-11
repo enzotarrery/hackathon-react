@@ -21,6 +21,7 @@ import CoursesIndex from "./components/Dashboard/blocs/CoursesIndex";
 import Contact from "./views/Contact";
 import NotFound from "./views/NotFound";
 import Table from './components/Table';
+import About from "./views/About";
 
 /* Context */
 const AuthContext = createContext();
@@ -146,6 +147,7 @@ const App = () => {
             {/* Other */}
             <Route path='/register' element={<Register />} />
             <Route path='/contact' element={<Contact />} />
+            <Route path='/about' element={<About />} />
             <Route path='*' element={<NotFound />} />
 
           </Routes>
