@@ -32,7 +32,7 @@ const Courses = () => {
 
     /* Render */
     return (
-        <>
+        <section className='events__container'>
             <section className='events'>
                 <h3 className='title events__title'>Cours à venir</h3>
                 <table className='events__list'>
@@ -55,7 +55,7 @@ const Courses = () => {
             <Table
                 data='courses'
             />
-        </>
+        </section>
     );
 }
 

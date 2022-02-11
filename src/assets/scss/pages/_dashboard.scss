@@ -1,7 +1,5 @@
 @use '../variables/mixins';
 
 .content {
-    @include mixins.flexarize(row);
-    gap: 4rem;
     flex: 1 0 0%;
 }
