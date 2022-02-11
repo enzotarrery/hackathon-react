@@ -1,3 +1,5 @@
+@use '../variables/colors';
+@use '../variables/mediaqueries' as size;
 .messages {
   padding: 1rem;
   &__sender {
@@ -13,16 +15,32 @@
   }
   &__tosend {
     width: 100%;
-    position: fixed;
-    bottom: .7rem;
-    right: 0;
+    margin: 0 0;
+    margin-top: 1.5rem;
     height: 4rem;
     display: flex;
-    justify-content: center;
   }
   &__input {
     padding: 2rem;
-    width: 70%;
+    width: 100%;
     height: 100%;
+    border: 3px solid colors.$black;
+    border-radius: 4rem;
+  }
+  &__sender {
+    display: flex;
+    justify-content: start;
+    
+    img {
+      width: 3rem;
+    }
+  }
+  &__sender--end {
+    display: flex;
+    justify-content: end;
+    
+    img {
+      width: 3rem;
+    }
   }
 }

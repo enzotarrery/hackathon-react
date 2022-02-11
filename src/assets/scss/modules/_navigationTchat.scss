@@ -1,16 +1,38 @@
+@use '../variables/colors';
+@use '../variables/mediaqueries' as size;
+
 .navigation-tchat {
   display: flex;
   flex-direction: column;
   flex: 0 0 30%;
-  background-color: #F4A261;
-  color: white;
   padding: 1rem;
   border-radius: 9px;
-  margin-left: .7rem;
+  margin-right: .4rem;
+  border: 3px solid colors.$black;
+  border-radius: 4rem;
+  height: 45rem;
 
   &__link {
-    text-align: center;
+    text-align: left;
     margin-bottom: 1rem;
+    margin-left: 1rem;
     
+  }
+  &__picto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: size.$small) {
+  .navigation-tchat {
+    margin-right: 1.7rem;
+
+    &__picto {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
   }
 }

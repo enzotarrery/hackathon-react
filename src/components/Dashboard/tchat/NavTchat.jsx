@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Picto from "../../../assets/images/pictos/profile.svg";
 import { Link } from "react-router-dom";
 const { v4: uuidv4 } = require("uuid");
 
@@ -15,13 +16,15 @@ const NavTchat = ({ tchats, users, handleReadingFrom }) => {
         {tchats && tchats.length > 0 ? (
           tchats.map((item) => {
             return (
-              <p
-                className="navigation-tchat__link"
-                onClick={() => handleReadingFrom(item.userId)}
-                key={uuidv4()}
-              >
-                {users && getUserName(item.userId)}
-              </p>
+              <div key={uuidv4()} className="navigation-tchat__picto">
+                <img src={Picto} alt="profile picto" />
+                <p
+                  className="navigation-tchat__link"
+                  onClick={() => handleReadingFrom(item.userId)}
+                >
+                  {users && getUserName(item.userId)}
+                </p>
+              </div>
             );
           })
         ) : (
