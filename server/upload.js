@@ -15,7 +15,11 @@ const uploadMiddleware = settings => (req, res, next) => {
     form.parse(req, (err, fields, files) => {
         req.body = {
             ...fields,
-            uploadUrl: settings.baseUrl + files.image.newFilename
+        }
+        for(const fileField of Object.keys(files)){
+            req.body[
+                fileField+'Url'
+            ] = settings.baseUrl + files[fileField].newFilename
         }
 
         next(err)

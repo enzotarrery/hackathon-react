@@ -26,6 +26,7 @@
 @use 'modules/events';
 @use 'modules/event';
 @use 'modules/navigationTchat';
+@use 'modules/dashboardCoursesBloc';
 @use 'modules/messages';
 @use 'modules/tchatscreen.scss';
 @use 'modules/help';
@@ -33,6 +34,7 @@
 @use 'modules/burger';
 @use 'modules/loginForm';
 @use 'modules/registerForm';
+@use 'modules/navigationDashboard';
 
 /* 4 - pages exceptions */
 @use 'pages/index';
@@ -45,3 +47,4 @@
 @use 'pages/register';
 @use 'pages/profile';
 @use 'pages/legals';
+@use 'pages/notFound';
