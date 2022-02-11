@@ -18,6 +18,7 @@ import Dashboard from "./views/Dashboard";
 import Profile from "./views/Profile";
 import Help from "./views/Help";
 import CoursesIndex from "./components/Dashboard/blocs/CoursesIndex";
+import Contact from "./views/Contact";
 
 /* Context */
 const AuthContext = createContext();
@@ -140,6 +141,7 @@ const App = () => {
 
             {/* Other */}
             <Route path="/register" element={<Register />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </Layout>
       </BrowserRouter>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Help = () => {
   return (
-    <div className='content'>
+    <div className='content--help'>
       <h1 className="help__title--page">
         Comment ça marche CARL ?
       </h1>
