@@ -1,4 +1,5 @@
-@import '../variables/colors';
+@use '../variables/colors';
+@use '../variables/mediaqueries' as size;
 
 .dashboard-courses-bloc {
     display: flex;
@@ -15,8 +16,8 @@
         display: flex;
         justify-content: space-around;
         flex-direction: column;
-        background: $white;
-        border: solid 3px $black;
+        background: colors.$white;
+        border: solid 3px colors.$black;
         margin: 2rem;
         padding-top: 2rem;
         border-radius: 37px;
@@ -46,7 +47,7 @@
         display: block;
         width: 100%;
         height: 1px;
-        background: $black;
+        background: colors.$black;
     }
 
     &__button {
@@ -59,14 +60,21 @@
         display: block;
         width: 30%;
         height: .8rem;
-        background: $white;
-        border: solid 1px $black;
+        background: colors.$white;
+        border: solid 1px colors.$black;
     }
 
     .color {
         display: block;
         width: 20%;
         height: .8rem;
-        background: $green;
+        background: colors.$green;
+    }
+}
+@media only screen and (min-width: size.$small) {
+    .burger {
+      &__icon {
+        display: none;
+      }
     }
 }
