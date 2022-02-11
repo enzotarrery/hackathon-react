@@ -2,13 +2,12 @@
   "users": [
     {
       "id": 0,
-      "firstName": "Bria",
+      "firstName": "Brian",
       "lastName": "Bruneau",
       "email": "noemiebenoit@hotmail.com",
       "password": "2Charlotte90",
       "favoritePlacesId": [
-        2,
-        6
+        "10"
       ],
       "favoriteInstructorsId": [],
       "instructorInfos": {
