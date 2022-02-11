@@ -31,6 +31,9 @@
 @use 'modules/burger';
 @use 'modules/loginForm';
 @use 'modules/registerForm';
+@use 'modules/profile';
+@use 'modules/legals';
+@use 'modules/navigationDashboard';
 
 /* 4 - pages exceptions */
 @use 'pages/index';

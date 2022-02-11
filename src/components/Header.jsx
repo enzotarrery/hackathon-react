@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Burger from "./Burger";
+import Logo from "../assets/images/logo_carl.svg";
 
 const Header = () => {
   const [displayDesk, setDisplayDesk] = useState(false);
@@ -11,7 +12,9 @@ const Header = () => {
     : "fa-solid fa-bars burger__icon button__mobile";
   return (
     <header className="header">
-      <div className="header__logo">LOGO</div>
+      <div className="header__logo">
+        <img src={Logo} alt="Logo" />
+      </div>
       <nav className="header__nav">
         <Link to="/help" className="button">
           Aide

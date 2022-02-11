@@ -1,11 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { AuthContext } from '../App'
 
-
-
-
 const Profile = () => {
-    // Introduction d'un user en const pour dev
     const loggedUser = {
         "id": 0,
         "firstName": "Brian",

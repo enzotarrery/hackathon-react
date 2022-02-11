@@ -4,7 +4,7 @@ import Navigation from "../components/Dashboard/navigation/Navigation";
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className="dashboard-parent">
       <Navigation />
       <div className="content">
         <Outlet />

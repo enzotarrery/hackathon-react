@@ -1,4 +1,4 @@
-.content {
+.content--help {
   background-color: #fbfbf2;
   font-family: 'Hind Vadodara', sans-serif;
 }
@@ -58,7 +58,7 @@
   }
 }
 @media only screen and (min-width: 767px) {
-  .content {
+  .content--help {
     margin: 0 50px;
   }
   .help {
@@ -71,7 +71,7 @@
   }
 }
 @media only screen and (min-width: 1024px) {
-  .content {
+  .content--help {
     margin: 0 150px;
   }
   .help {
