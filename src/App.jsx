@@ -115,6 +115,7 @@ const App = () => {
               <Route index element={<CoursesIndex />} />
               <Route path="stats" element={<CoursesIndex />} />
               <Route path="tchat" element={<Tchat />} />
+              <Route path="courses" element={<Courses />} />
               <Route path="account" element={<Profile />} />
             </Route>
 
