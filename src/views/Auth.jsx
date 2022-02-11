@@ -48,24 +48,20 @@ const Logout = props => {
   const [state, actions] = useContext(AuthContext)
   console.log(state);
 
-  return <div className="">
+  return <div className="logout">
       {
         !state.loading && !state.user && <Navigate 
           to={'/login'}
         />
       }
 
-      <div className="">
-          <div className="">
-              <p>Revenez vite !</p>
+    <h1 className='title'>Revenez vite !</h1>
 
-              <Link to='/login' onClick={actions.Logout}>
-                <p className="">
-                    Déconnexion
-                </p>
-              </Link>
-          </div>
-      </div>
+    <Link to='/login' onClick={actions.Logout}>
+      <p className="button button--primary">
+          Déconnexion
+      </p>
+    </Link>
   </div>
 }
 

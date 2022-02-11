@@ -23,6 +23,8 @@
 @use 'modules/course-form';
 @use 'modules/tags';
 @use 'modules/tag';
+@use 'modules/events';
+@use 'modules/event';
 @use 'modules/navigationTchat';
 @use 'modules/dashboardCoursesBloc';
 @use 'modules/messages';
@@ -42,6 +44,8 @@
 @use 'pages/home';
 @use 'pages/login';
 @use 'pages/logout';
+@use 'pages/dashboard';
 @use 'pages/register';
 @use 'pages/profile';
 @use 'pages/legals';
+@use 'pages/notFound';

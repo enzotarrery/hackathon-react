@@ -1,80 +1,137 @@
 @use '../variables/colors';
 @use '../variables/mediaqueries' as size;
 
+.dashboard-courses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
 .dashboard-courses-bloc {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 35px;
+  border: 2px solid #32292f;
+  box-shadow: 10px 10px 0px 5px #32292f;
+  margin-bottom: 50px;
+  &__title {
+    margin: 2rem;
+    text-transform: uppercase;
     font-weight: bold;
-    &__title {
-        margin: 2rem;
-        text-transform: uppercase;
-        font-weight: bold;
-    }
-    &__card {
-        display: flex;
-        justify-content: space-around;
-        flex-direction: column;
-        background: colors.$white;
-        border: solid 3px colors.$black;
-        margin: 2rem;
-        padding-top: 2rem;
-        border-radius: 37px;
-        height: 50vh;
-        width: 50vw;
-    }
+  }
+  &__card {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    background: colors.$white;
+    border: solid 3px colors.$black;
+    margin: 2rem;
+    padding-top: 2rem;
+    border-radius: 37px;
+    height: 50vh;
+    width: 300px;
+  }
 
-    &__titles {
-        font-size: 1.5rem;
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-    }
-    
-    &__students {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-right: 2rem;
-        padding-left: 2rem;
-        span {
-            display: block;
-        }
-    }
+  &__titles {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 
-    .division {
-        display: block;
-        width: 100%;
-        height: 1px;
-        background: colors.$black;
+    &--paiement {
+      justify-content: flex-start;
     }
+  }
 
-    &__button {
-        align-self: flex-end;
-        margin-right: 3rem;
-        width: 50%;
+  &__side-blocs {
+    .dashboard-courses-bloc__card {
+      height: 200px;
     }
+  }
 
-    .progression {
-        display: block;
-        width: 30%;
-        height: .8rem;
-        background: colors.$white;
-        border: solid 1px colors.$black;
-    }
+  &__date {
+    color: #32292f7c;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 4px 0;
+  }
 
-    .color {
-        display: block;
-        width: 20%;
-        height: .8rem;
-        background: colors.$green;
+  &__paiement {
+    padding-left: 25px;
+    font-size: 24px;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  &__arrow {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .w3-grey--paiement {
+    margin: 0 10%;
+    width: 60%;
+    background-color: colors.$red;
+  }
+
+  &__students {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    span {
+      display: block;
     }
+  }
+
+  .division {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: colors.$black;
+  }
+
+  &__button {
+    align-self: flex-end;
+    margin-right: 3rem;
+    width: 50%;
+  }
+
+  .progression {
+    display: block;
+    width: 30%;
+    height: 0.8rem;
+    background: colors.$white;
+    border: solid 1px colors.$black;
+  }
+
+  .color {
+    display: block;
+    width: 20%;
+    height: 0.8rem;
+    background: colors.$green;
+  }
 }
 @media only screen and (min-width: size.$small) {
-    .burger {
-      &__icon {
-        display: none;
-      }
+  .dashboard-courses {
+    flex-direction: row;
+  }
+  .dashboard-courses-bloc {
+    margin-left: 50px;
+    &__side-blocs {
+      margin-left: 10vw;
     }
+  }
+
+  .burger {
+    &__icon {
+      display: none;
+    }
+  }
 }

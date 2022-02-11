@@ -17,7 +17,7 @@ const Register = () => {
     formData.append('role', infos.role)
     formData.append('favoritePlacesId', infos.favoritePlacesId)
     formData.append('favoriteInstructorsId', infos.favoriteInstructorsId)
-    formData.append('car', infos.car[0])
+    formData.append('car', infos.car ? infos.car[0] : "")
     formData.append('isAvailable', infos.isAvailable)
 
     const options = {

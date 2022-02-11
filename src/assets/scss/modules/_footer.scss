@@ -61,6 +61,21 @@
     margin: 2% 0;
 
   }
+
+  &__iconContainer {
+    @include mixins.flexarize(row, flex-start, center, nowrap);
+  }
+
+  &__icon {
+    width: 30px;
+    height: auto;
+
+    padding: 2%;
+
+    & > svg  {
+      fill: colors.$white;
+    }
+  }
 }
 
 
