@@ -1,0 +1,44 @@
+@use '../variables/colors';
+@use '../variables/mediaqueries' as size;
+
+.burger {
+  transform: translateX(200%);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  background: colors.$black;
+  height: 100vh;
+  text-align: right;
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  transition: transform 0.7s ease-in;
+  transform: translateX(-100%);
+  overflow: hidden;
+
+  a {
+    display: block;
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 2rem 0;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+    color: colors.$white;
+    text-decoration: none;
+    transition: color 0.3s linear;
+    margin-top: 2rem;
+    &:hover {
+      color: colors.$green;
+    }
+  }
+}
+@media only screen and (min-width: size.$small) {
+  .burger {
+    &__icon {
+      display: none;
+    }
+  }
+}

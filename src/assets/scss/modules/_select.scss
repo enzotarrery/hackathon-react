@@ -1,0 +1,16 @@
+.select {
+    padding: 1.5vw 2vw;
+    width: 100%;
+    background: #FBFBF2;
+    border: 3px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 992px) {
+    .select {
+        padding: 0.5vw 1vw;
+    }
+}

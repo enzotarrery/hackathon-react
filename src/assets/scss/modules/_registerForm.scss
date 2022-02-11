@@ -1,0 +1,92 @@
+@use '../variables/colors';
+@use '../variables/fonts';
+@use '../variables/mixins';
+
+.registerForm {
+  @include mixins.flexarize(column, center, center, nowrap);
+  min-height: 80vh;
+  width: 400px;
+
+  background-color: colors.$white;
+  position: relative;
+
+  border-radius: 40px;
+  border: 2px solid colors.$black;
+
+  padding: 5%;
+
+  &::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: colors.$black;
+    position: absolute;
+    z-index: -10;
+    top: 20px;
+    left: -20px;
+    border-radius: 40px;
+  }
+
+  &__label, &__radioLabel {
+    align-self: flex-start;
+    color: colors.$black;
+    font-family: fonts.$font-main;
+    font-weight: 500;
+  }
+
+  &__label {
+    margin: 3% 0;
+  }
+
+  &__input {
+    background-color: colors.$white;
+    border-radius: 0;
+    border: 2px solid colors.$black;
+    width: 100%;
+    padding: 3% 1%;
+    margin-bottom: 1%;
+  }
+
+  &__radioGroup {
+    @include mixins.flexarize(row-reverse, flex-end, flex-end, nowrap);
+    width: 100%;
+    padding: 2% 0;
+
+    &:nth-child(1) {
+      margin-top: 5vh;
+    }
+    &:nth-child(2) {
+      margin-bottom: 5vh;
+    }
+  }
+
+  &__additionalLabel {
+    font-size: 1.2rem;
+    color: colors.$black;
+  }
+
+  &__upload, &__submit {
+    background-color: #C4C4C4;
+    padding: 3%;
+    border: none;
+  }
+
+  &__submit {
+    font-weight: bold;
+    width: 70%;
+    margin: 2% 0;
+  }
+
+  &__separator {
+    margin: 3vh 0;
+  }
+
+  
+}
+
+@media screen and (max-width: 578px) {
+  .registerForm {
+    width: 80%
+  }
+}

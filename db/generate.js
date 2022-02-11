@@ -102,6 +102,7 @@ casual.define("user", (id, role) => {
     lastName: casual.last_name,
     email: casual.email,
     password: casual.password,
+    district: places[casual.integer(0, settings.placesLength - 1)].name,
     favoritePlacesId: Array(casual.integer(0, settings.maxFavoritePlaces - 1))
       .fill(null)
       .map(() => casual.integer(0, settings.placesLength - 1)),
@@ -112,13 +113,13 @@ casual.define("user", (id, role) => {
             .fill(null)
             .map(() => casual.integer(0, settings.instructorsLength - 1)),
     instructorInfos:
-      role === " "
+      role === "student"
         ? {}
         : {
             car: casual.random_value({
-              a: "%PUBLIC_URL%/img/ren.jpg",
-              b: "%PUBLIC_URL%/img/ope.jpg",
-              c: "%PUBLIC_URL%/img/truck.jpg",
+              a: "/img/ren.jpg",
+              b: "/img/ope.jpg",
+              c: "/img/truck.jpg",
             }),
           },
     isAvailable:
@@ -146,7 +147,7 @@ casual.define("session", (id) => {
     instructorUserId: casual.integer(0, settings.instructorsLength - 1),
     studentUserId: casual.random_element([
       casual.integer(0, settings.usersLength - 1),
-      'none',
+      "none",
     ]),
   };
 });

@@ -1,0 +1,25 @@
+@use '../variables/mixins';
+
+.reservation {
+    @include mixins.flexarize(column);
+    gap: 4rem;
+
+    &__content {
+        @include mixins.flexarize(column);
+        gap: 4rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .reservation {
+
+        &__content {
+            flex-direction: row;
+            justify-content: space-between;
+
+            & > * {
+                flex: 0 0 40%;
+            }
+        }
+    }
+}
