@@ -9,3 +9,9 @@
     border-radius: 10px;
     cursor: pointer;
 }
+
+@media screen and (min-width: 992px) {
+    .tag {
+        padding: 0.5vw 1vw;
+    }
+}

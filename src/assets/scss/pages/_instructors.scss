@@ -10,3 +10,17 @@
         gap: 5rem;
     }
 }
+
+@media screen and (min-width: 992px) {
+    .instructors {
+
+        &__list {
+            @include mixins.flexarize(row, space-between, flex-start, wrap);
+            gap: 5rem;
+        }
+
+        &__list-item {
+            flex: 0 0 45%;
+        }
+    }
+}

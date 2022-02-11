@@ -1,3 +1,4 @@
+import { createEvent } from '@testing-library/react';
 import React from 'react'
 import { useEffect, useState } from 'react/cjs/react.development';
 
@@ -18,6 +19,7 @@ const Search = (props) => {
 
     const handleChange = (event) => {
         setSearch(event.target.value);
+        props.onChange(event.target.value);
     }
 
     const handleFocus = (event) => {
@@ -60,12 +62,12 @@ const Search = (props) => {
                             key={ item.id }
                             className='dropdown__item'
                             onClick={ handleClick }
-                        >
-                            { item.name }
-                        </li>
-                    )
-                }
-            </ul>
+                            >
+                                { item.name }
+                            </li>
+                        )
+                    }
+            </ul>  
         </section>
     );
 }

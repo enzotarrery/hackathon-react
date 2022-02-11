@@ -19,3 +19,12 @@
         z-index: 50;
     }
 }
+
+@media screen and (min-width: 992px) {
+    .search {
+
+        &__bar {
+            padding: 0.5vw 1vw;
+        }
+    }
+}

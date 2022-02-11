@@ -1,7 +1,42 @@
+@use '../variables/colors';
+
 .button {
     /* general style */
 
     &--primary {}
 
     &--secondary {}
+
+    &--outline {
+        padding: 2vw;
+        background-color: none;
+        border: 1px solid colors.$black;
+        border-radius: 5px;
+    }
+
+    &--solid {
+        &:link, &:hover, &:visited {
+            padding: 2vw;
+            border: 1px solid colors.$black;
+            border-radius: 5px;
+            background-color: colors.$black;
+            color: #fff;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .button {
+        &--outline {
+            &:link, &:hover, &:visited {
+                padding: 1vw;
+            }
+        }
+
+        &--solid {
+            &:link, &:hover, &:visited {
+                padding: 1vw;
+            }
+        }
+    }
 }

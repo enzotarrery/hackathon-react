@@ -8,6 +8,7 @@ const Instructors = () => {
     /* States */
     const [ instructors, setInstructors ] = useState([]);
     const [ tag, setTag ] = useState('all');
+    const [ district, setDistrict ] = useState('');
 
     /* Functions */
     const getData = () => {
@@ -19,6 +20,10 @@ const Instructors = () => {
 
     const handleClick = (event) => {
         setTag(event.target.id);
+    }
+
+    const updateDistrict = (district) => {
+        setDistrict(district);
     }
 
     /* Hooks */
@@ -40,10 +45,12 @@ const Instructors = () => {
             </ul>
             <Search
                 type='places'
+                onChange={ updateDistrict }
             />
             <ul className='instructors__list'>
                 {
                     tag === 'all' && instructors
+                        .filter((instructor) =>  district === '' ? true : instructor.district.toLowerCase().includes(district.toLowerCase()))
                         .map((instructor) =>
                         <Instructor
                             key={ instructor.id }
@@ -53,13 +60,13 @@ const Instructors = () => {
                 }
                 {
                     tag === 'availables' && instructors
-                        .filter((instructor) => instructor.isAvailable)
+                        .filter((instructor) => (district === '' ? true : instructor.district.toLowerCase().includes(district.toLowerCase())) && instructor.isAvailable)
                         .map((instructor) =>
                             <Instructor
                                 key={ instructor.id }
                                 data={ instructor }
                             />
-                    )
+                        )
                 }
             </ul>
         </section>

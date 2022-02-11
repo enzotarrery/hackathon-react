@@ -37,3 +37,9 @@ img {
   height: auto;
   vertical-align: middle;
 }
+
+@media screen and (min-width: 992px) {
+  main {
+    padding: 2vw 10vw;
+  }
+}

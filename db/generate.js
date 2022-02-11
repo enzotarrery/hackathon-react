@@ -102,6 +102,7 @@ casual.define("user", (id, role) => {
     lastName: casual.last_name,
     email: casual.email,
     password: casual.password,
+    district: places[casual.integer(0, settings.placesLength - 1)].name,
     favoritePlacesId: Array(casual.integer(0, settings.maxFavoritePlaces - 1))
       .fill(null)
       .map(() => casual.integer(0, settings.placesLength - 1)),
