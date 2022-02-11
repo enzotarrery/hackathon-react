@@ -109,8 +109,9 @@ const App = () => {
 
             {/* Dashboard */}
             <Route path="/dashboard" element={<Dashboard />}>
-              <Route path="tchat" element={<Tchat />} />
+              <Route index element={<CoursesIndex />} />
               <Route path="stats" element={<CoursesIndex />} />
+              <Route path="tchat" element={<Tchat />} />
             </Route>
 
             {/* Instructor */}
