@@ -18,6 +18,7 @@ import Dashboard from "./views/Dashboard";
 import Profile from "./views/Profile";
 import Help from "./views/Help";
 import Contact from "./views/Contact";
+import NotFound from "./views/NotFound";
 
 /* Context */
 const AuthContext = createContext();
@@ -138,6 +139,7 @@ const App = () => {
             {/* Other */}
             <Route path='/register' element={<Register />} />
             <Route path='/contact' element={<Contact />} />
+            <Route path='*' element={<NotFound />} />
 
           </Routes>
         </Layout>
