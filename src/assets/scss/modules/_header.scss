@@ -1,5 +1,13 @@
 @use '../variables/colors';
+@use '../variables/mediaqueries' as size;
+
+
 .header {
   height: 5rem;
+  width: 100%;
+  max-width: size.$desktop;
+  margin: 0 auto;
   background-color: colors.$white;
+  display: flex;
+  justify-content: space-between;
 }

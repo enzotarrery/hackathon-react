@@ -45,7 +45,7 @@
     margin-top: 2rem;
   }
   &__input {
-    margin-right: 3.3rem;
+    margin-right: 1.3rem;
     background: colors.$white;
     border: 3px solid colors.$black;
     border-radius: 10px;
@@ -60,6 +60,9 @@
 
     &__presentation {
       padding: 2rem;
+    }
+    &__input {
+      margin-right: 3.3rem;
     }
   }
 }
