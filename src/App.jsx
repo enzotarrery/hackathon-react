@@ -131,8 +131,11 @@ const App = () => {
             <Route path='/help' element={<Help />} />
 
             {/* Miscellaneous */}
-            < Route path='/legals' element={<Legals />} />
+            <Route path='/legals' element={<Legals />} />
             <Route path='/privacy' element={<PrivacyPolicy />} />
+
+            {/* Other */}
+            <Route path='/register' element={<Register />} />
 
           </Routes>
         </Layout>

@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Burger from "./Burger";
 
 const Header = () => {
+  const [displayDesk, setDisplayDesk] = useState(false);
+  const [displayMob, setDisplayMob] = useState(false);
+
+  const classButton = displayMob
+    ? "fa-solid fa-bars button__mobile burger__icon white"
+    : "fa-solid fa-bars burger__icon button__mobile";
   return (
     <header className="header">
-      <Link to="/help" className="button">
-        Aide
-      </Link>
-      <Link to="/logout" className="button button--primary">
-        Inscription
-      </Link>
-      <Link to="/login" className="button">
-        Connexion
-      </Link>
+      <div className="header__logo">LOGO</div>
+      <nav className="header__nav">
+        <Link to="/help" className="button">
+          Aide
+        </Link>
+        <Link to="/logout" className="button">
+          Donner des cours
+        </Link>
+        <Link to="/logout" className="button">
+          Inscription
+        </Link>
+        <Link to="/login" className="button button--primary">
+          Connexion
+        </Link>
+      </nav>
+      <i onClick={() => setDisplayMob(!displayMob)} className={classButton}></i>
+      <Burger isOpen={displayMob} />
     </header>
   );
 };

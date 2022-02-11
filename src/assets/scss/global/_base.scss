@@ -1,5 +1,5 @@
 /* General rules */
-
+@use '../variables/colors';
 *,
 *:after,
 *:before {
@@ -8,11 +8,14 @@
 
 html {
   font-size: 62.5%; /* 1rem = 10px */
+  overflow-x: hidden;
 }
 
 body {
   font-size: 1.4rem; /* 14px by default */
   font-family: 'Noto sans', sans-serif;
+  background-color: colors.$white;
+  width: 100%;
 }
 
 /* WARNING: links are black by default, don't forget to reuse this syntax to override this default style */
@@ -27,4 +30,10 @@ img {
   max-width: 100%;
   height: auto;
   vertical-align: middle;
+}
+.separate {
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: colors.$black;
 }

@@ -1,0 +1,79 @@
+@use '../variables/colors';
+@use '../variables/mediaqueries' as size;
+
+
+.home {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+
+  &__presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 0 100%;
+    margin-bottom: 3rem;
+    padding: 1rem;
+  }
+  ul li {
+    margin-bottom: 1.2rem;
+  }
+  ul li i {
+    font-size: 1.9rem;
+  }
+  &__pub {
+    margin-left: 2rem;
+  }
+  &__pub-last-child {
+    margin-left: 1.6rem;
+  }
+  &__title {
+    font-size: 4.4rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 3.5rem;
+  }
+  &__subtitle {
+    font-weight: bold;
+    margin-bottom: 3.5rem;
+    line-height: 1.2;
+    font-size: 1.7rem;
+
+
+  }
+  &__search {
+    margin-top: 2rem;
+  }
+  &__input {
+    margin-right: 1.3rem;
+    background: colors.$white;
+    border: 3px solid colors.$black;
+    border-radius: 10px;
+    height: 3.3rem;
+    box-shadow: 5px 7px 0px 0px colors.$black;
+  }
+}
+@media only screen and (min-width: size.$small) {
+  .home {
+    padding: 2rem 4rem;
+    align-items: center;
+
+    &__presentation {
+      padding: 2rem;
+    }
+    &__input {
+      margin-right: 3.3rem;
+    }
+  }
+}
+@media only screen and (min-width: size.$middle) {
+  .home {
+    flex-direction: row;
+    padding: 2rem;
+    justify-content: center;
+    margin-top: 5rem;
+    &__presentation {
+      flex: 0 0 50%;
+    }
+  }
+}
