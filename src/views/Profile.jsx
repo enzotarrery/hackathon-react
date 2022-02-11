@@ -2,21 +2,6 @@ import React, { useState, useContext, useEffect } from 'react';
 import { AuthContext } from '../App'
 
 const Profile = () => {
-    const loggedUser = {
-        "id": 0,
-        "firstName": "Brian",
-        "lastName": "Bruneau",
-        "email": "noemiebenoit@hotmail.com",
-        "password": "2Charlotte90",
-        "favoritePlacesId": [2, 6],
-        "favoriteInstructorsId": [],
-        "instructorInfos": {
-            "car": "/img/ope.jpg"
-        },
-        "isAvailable": false,
-        "role": "instructor"
-    }
-
     const getPlaces = () => {
         fetch('http://localhost:8080/api/places')
             .then((response) => response.json())
@@ -27,6 +12,29 @@ const Profile = () => {
     //HOOKS
 
     const [state, actions] = useContext(AuthContext)
+
+    let loggedUser = {}
+    if (state.user) {
+        loggedUser = state.user
+    }
+    else {
+        loggedUser = {
+            "id": 0,
+            "firstName": "Brian",
+            "lastName": "Bruneau",
+            "email": "noemiebenoit@hotmail.com",
+            "password": "2Charlotte90",
+            "favoritePlacesId": [2, 6],
+            "favoriteInstructorsId": [],
+            "instructorInfos": {
+                "car": "/img/ope.jpg"
+            },
+            "isAvailable": false,
+            "role": "instructor"
+        }
+    }
+
+
     const [places, setPlaces] = useState([])
     const [formState, setFormState] = useState(loggedUser)
 

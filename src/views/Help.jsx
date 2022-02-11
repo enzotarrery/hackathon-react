@@ -9,7 +9,7 @@ const Help = () => {
       <section className="help">
         <div className="help__presentation">
           <h2 className="help__title--section">
-            <span>Organisez</span> <br />
+            <span>Organisé</span> <br />
             tout votre travail sur une seule plateforme
           </h2>
           <h3 className="help__subtitle">
@@ -29,7 +29,7 @@ const Help = () => {
         </div>
         <div className="help__presentation revert">
           <h2 className="help__title--section">
-            <span>Gagnez</span><br />
+            <span>Gagné</span><br />
             Du temps en obtenant un rendez-vous en quelques clics
           </h2>
           <h3 className="help__subtitle">
@@ -40,7 +40,7 @@ const Help = () => {
       <section className="help">
         <div className="help__presentation">
           <h2 className="help__title--section">
-            <span>Organisez</span> <br />
+            <span>Organisé</span> <br />
             tout votre travail sur une seule plateforme
           </h2>
           <h3 className="help__subtitle">
